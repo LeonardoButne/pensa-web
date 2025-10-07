@@ -2,12 +2,12 @@ package com.pensa.api.services;
 
 import com.pensa.api.dto.*;
 import com.pensa.api.repositories.*;
+import com.pensa.api.models.BusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class ServiceService {
     
     @Autowired
-    private ServiceRepository serviceRepository;
+    private BusinessServiceRepository serviceRepository;
     
     public List<ServiceDTO> getAllServices() {
         return serviceRepository.findByIsActiveTrueOrderByNameAsc()
@@ -34,12 +34,12 @@ public class ServiceService {
     
     public Optional<ServiceDTO> getServiceById(Long id) {
         return serviceRepository.findById(id)
-                .filter(Service::getIsActive)
+                .filter(BusinessService::getIsActive)
                 .map(this::convertToDTO);
     }
     
     public List<ServiceDTO> getServicesByType(String type) {
-        Service.ServiceType serviceType = Service.ServiceType.valueOf(type.toUpperCase());
+        BusinessService.ServiceType serviceType = BusinessService.ServiceType.valueOf(type.toUpperCase());
         return serviceRepository.findByIsActiveTrueAndTypeOrderByNameAsc(serviceType)
                 .stream()
                 .map(this::convertToDTO)
@@ -51,7 +51,7 @@ public class ServiceService {
                 .map(this::convertToDTO);
     }
     
-    private ServiceDTO convertToDTO(Service service) {
+    private ServiceDTO convertToDTO(BusinessService service) {
         ServiceDTO dto = new ServiceDTO();
         dto.setId(service.getId());
         dto.setName(service.getName());

@@ -1,0 +1,40 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.content {
+  max-width: 500px;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .iconWrapper {
+    min-height: 250px;
+  }
+}

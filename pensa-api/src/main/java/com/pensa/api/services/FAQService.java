@@ -55,4 +55,15 @@ public class FAQService {
         dto.setDisplayOrder(faq.getDisplayOrder());
         return dto;
     }
+
+    public FAQDTO createFAQ(FAQDTO faqDTO) {
+        FAQ faq = new FAQ();
+        faq.setQuestion(faqDTO.getQuestion());
+        faq.setAnswer(faqDTO.getAnswer());
+        faq.setCategory(FAQ.Category.valueOf(faqDTO.getCategory().toUpperCase()));
+        faq.setDisplayOrder(faqDTO.getDisplayOrder());
+        faq.setIsActive(true);
+        FAQ savedFAQ = faqRepository.save(faq);
+        return convertToDTO(savedFAQ);
+    }
 }

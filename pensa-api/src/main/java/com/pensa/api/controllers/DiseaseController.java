@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/diseases")
 @Tag(name = "Diseases", description = "Gestão de doenças")
@@ -100,7 +99,7 @@ public class DiseaseController {
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Atualizar doença")
-    public ResponseEntity<ApiResponse<DiseaseDTO>> updateDisease(@PathVariable Long id, @Valid @RequestBody CreateDiseaseDTO updateDiseaseDTO) {
+    public ResponseEntity<ApiResponse<DiseaseDTO>> updateDisease(@PathVariable Long id, @Valid @RequestBody UpdateDiseaseDTO updateDiseaseDTO) {
         try {
             DiseaseDTO disease = diseaseService.updateDisease(id, updateDiseaseDTO);
             return ResponseEntity.ok(ApiResponse.success("Doença atualizada com sucesso!", disease));

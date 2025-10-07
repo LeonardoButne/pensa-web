@@ -1,0 +1,62 @@
+.header {
+  background: var(--mantine-color-white);
+  border-bottom: 1px solid var(--mantine-color-gray-2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--mantine-color-gray-7);
+  font-weight: 500;
+  font-size: var(--mantine-font-size-sm);
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.link:hover {
+  color: var(--mantine-color-cyan-6);
+}
+
+.link[data-active] {
+  color: var(--mantine-color-cyan-6);
+  border-bottom-color: var(--mantine-color-cyan-6);
+}
+
+.mobileLink {
+  text-decoration: none;
+  color: var(--mantine-color-gray-7);
+  font-weight: 500;
+  font-size: var(--mantine-font-size-lg);
+  padding: 1rem;
+  border-radius: var(--mantine-radius-md);
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.mobileLink:hover {
+  background: var(--mantine-color-cyan-0);
+  color: var(--mantine-color-cyan-7);
+}
+
+.mobileLink[data-active] {
+  background: var(--mantine-color-cyan-1);
+  color: var(--mantine-color-cyan-7);
+  font-weight: 600;
+}

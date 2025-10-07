@@ -1,22 +1,12 @@
 package com.pensa.api.services;
 
-import com.pensa.api.dto.*;
 import com.pensa.api.models.*;
-import com.pensa.api.repositories.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.time.LocalDateTime;
-import java.time.temporal.WeekFields;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 
 @Service
 public class EmailService {

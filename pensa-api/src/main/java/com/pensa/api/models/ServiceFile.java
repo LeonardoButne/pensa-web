@@ -41,7 +41,7 @@ public class ServiceFile {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
-    private Service service;
+    private BusinessService service;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -108,11 +108,11 @@ public class ServiceFile {
         this.size = size;
     }
 
-    public Service getService() {
+    public BusinessService getService() {
         return service;
     }
 
-    public void setService(Service service) {
+    public void setService(BusinessService service) {
         this.service = service;
     }
 
