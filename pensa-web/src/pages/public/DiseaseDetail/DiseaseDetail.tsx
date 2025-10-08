@@ -79,7 +79,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
       "Evitar consumo precoce e excessivo. Educação sobre riscos e falsos mitos (ex.: álcool alivia o stress). Limitar acesso a bebidas e promover alternativas de lazer sem álcool.",
     causes:
       "Factores biológicos e genéticos como a hereditariedade, factores psicológicos como traumas, ansiedade ou depressão. Factores sociais e Ambientais como a pressão social ou cultural e a falta de uma rede de apoio.",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     id: 3,

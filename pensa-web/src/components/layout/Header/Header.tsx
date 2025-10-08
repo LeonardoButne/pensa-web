@@ -16,7 +16,7 @@ const links = [
   { link: "/", label: "Início" },
   { link: "/servicos", label: "Serviços" },
   { link: "/doencas", label: "Doenças" },
-  { link: "/projetos", label: "Projetos" },
+  { link: "/projectos", label: "Projectos" },
   { link: "/sobre", label: "Sobre nós" },
 ];
 
