@@ -34,7 +34,7 @@ const sdgData = [
 
 export function ComplaintSection() {
   return (
-    <Box py={{ base: rem(40), md: rem(0) }}>
+    <Box py={{ base: rem(40), md: rem(0) }} bg="blue" mb={rem(40)} p={rem(20)}>
       <Container size="lg">
         <Title order={3} ta="center" mb={rem(40)}>
           Canal de Queixas e Reclamações
@@ -56,10 +56,11 @@ export function ComplaintSection() {
                 // withBorder
                 ta="center"
                 h="100%"
+                mb={rem(40)}
               >
                 <Image
                   src={sdg.iconSrc}
-                  alt={`Ícone do ODS ${sdg.id}`}
+                  alt={`Ícone da reclamacao ${sdg.id}`}
                   style={{
                     width: rem(130),
                     margin: "0 auto",

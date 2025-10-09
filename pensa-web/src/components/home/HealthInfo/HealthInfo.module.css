@@ -1,0 +1,39 @@
+/* HealthInfo.module.css */
+
+.card {
+  /* Mantém o fundo branco/escuro e adiciona uma transição de hover para o efeito visual */
+  background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-7)
+  );
+  transition: transform 150ms ease, box-shadow 150ms ease;
+
+  /* Efeito de leve elevação ao passar o mouse */
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--mantine-shadow-xl); /* Usando XL para um destaque maior */
+  }
+}
+
+.section {
+  /* Linha separadora horizontal no topo da Card.Section */
+  border-top: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+
+  /* Ajuste o padding para ser uniforme em todos os lados (seguindo o padrão Mantine) */
+  padding: var(--mantine-spacing-md);
+
+  /* Garantindo que o título e badges tenham espaço no topo e no fundo */
+  padding-top: var(--mantine-spacing-md);
+  padding-bottom: var(--mantine-spacing-md);
+}
+
+.label {
+  /* Estilo para "Tópicos em Destaque" */
+  text-transform: uppercase;
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 700;
+  margin-bottom: var(
+    --mantine-spacing-xs
+  ); /* Adicionando uma margem para separar dos badges */
+}

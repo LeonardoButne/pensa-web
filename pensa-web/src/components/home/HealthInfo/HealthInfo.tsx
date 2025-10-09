@@ -7,12 +7,23 @@ import {
   Button,
   Group,
   Box,
+  Badge,
+  rem,
+  Image,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
-import classes from "./HealthInfo.module.css";
 import { IconArrowRight } from "@tabler/icons-react";
+import classes from "./HealthInfo.module.css"; // Vamos precisar desse arquivo CSS para os separadores
 
-const sections = [
+// Definição dos tipos para maior segurança (Type Safety)
+interface HealthSection {
+  img: string;
+  title: string;
+  items: string[];
+  link: string;
+}
+
+const sections: HealthSection[] = [
   {
     img: "/images-healthInfo/doencas.png",
     title: "Doenças",
@@ -45,73 +56,85 @@ const sections = [
 
 export function HealthInfo() {
   return (
-    <Box py={80} bg="white">
+    <Box py={{ base: rem(40), md: rem(20) }} bg="white">
       <Container size="xl">
-        <Title order={2} ta="center" mb={60} fw={700}>
-          Informação sobre saúde
+        <Title
+          order={2}
+          ta="center"
+          mb={{ base: rem(30), md: rem(60) }}
+          fw={700}
+        >
+          Informação sobre Saúde
         </Title>
 
-        <SimpleGrid cols={{ base: 1, md: 3 }} spacing="md">
-          {sections.map((section) => (
-            <Card
-              key={section.title}
-              shadow="xl"
-              padding="xl"
-              radius="lg"
-              className={classes.card}
-            >
-              <Group mb="md">
-                {/* Substitui o ícone pelo img */}
-                <Box
-                  style={{
-                    width: 80,
-                    height: 80,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: 8,
-                  }}
-                >
-                  <Group mb="md" display="flex" justify="center">
-                    <Box
-                      component="img"
-                      src={`${section.img}`} // se estiver usando imagens do public
-                      alt={section.title}
-                      width={80}
-                      height={80}
-                      style={{ objectFit: "contain" }}
-                    />
-                  </Group>
-                </Box>
-              </Group>
+        <SimpleGrid cols={{ base: 1, md: 3 }} spacing="sm">
+          {sections.map((section) => {
+            const features = section.items.map((item) => (
+              <Badge variant="light" key={item} color="cyan">
+                {item}
+              </Badge>
+            ));
 
-              <Title order={3} mb="lg" fw={700}>
-                {section.title}
-              </Title>
-
-              <Box component="ul" className={classes.list}>
-                {section.items.map((item) => (
-                  <Text key={item} component="li" size="sm" c="dimmed" mb="xs">
-                    {item}
-                  </Text>
-                ))}
-              </Box>
-
-              <Button
-                component={Link}
-                to={section.link}
-                variant="subtle"
-                rightSection={<IconArrowRight size={16} />}
-                mt="md"
-                fullWidth
+            return (
+              <Card
+                key={section.title}
+                withBorder
+                radius="lg" // Mantendo o raio grande
+                p="md"
+                shadow="xl"
+                className={classes.card} // Estilo CSS para o Card
               >
-                Ver mais
-              </Button>
-            </Card>
-          ))}
+                {/* 1. SEÇÃO DA IMAGEM */}
+                <Card.Section>
+                  <Image
+                    src={section.img}
+                    alt={section.title}
+                    height={160}
+                    fit="contain"
+                    p="md"
+                  />
+                </Card.Section>
+
+                {/* 2. SEÇÃO DO TÍTULO */}
+                <Card.Section className={classes.section} mt="md">
+                  <Title ta="center" order={3} fz="xl" fw={700}>
+                    {section.title}
+                  </Title>
+                  {/* <Text fz="sm" mt="xs" c="dimmed">
+                    {section.items.length} tópicos disponíveis.
+                  </Text> */}
+                </Card.Section>
+
+                {/* 3. SEÇÃO DOS BADGES (TÓPICOS) */}
+                {/* <Card.Section className={classes.section}>
+                  <Text mt="md" className={classes.label} c="dimmed" fz="sm">
+                    Tópicos em Destaque
+                  </Text>
+                  <Group gap={7} mt={5}>
+                    {features}
+                  </Group>
+                </Card.Section> */}
+
+                {/* 4. SEÇÃO DO BOTÃO */}
+                <Group mt="xl">
+                  <Button
+                    component={Link}
+                    to={section.link}
+                    rightSection={<IconArrowRight size={rem(0)} />}
+                    radius="md"
+                    style={{ flex: 1 }}
+                    color="cyan"
+                  >
+                    Ver Categoria
+                  </Button>
+                </Group>
+              </Card>
+            );
+          })}
         </SimpleGrid>
 
-        <Group justify="center" mt={40}>
+        {/* BOTÃO 'VER TUDO' CENTRALIZADO */}
+        {/* <Group justify="center" mt={{ base: rem(30), md: rem(60) }}>
           <Button
             component={Link}
             to="/informacoes-saude"
@@ -119,9 +142,9 @@ export function HealthInfo() {
             variant="outline"
             color="cyan"
           >
-            Ver tudo
+            Ver todas as Informações de Saúde
           </Button>
-        </Group>
+        </Group> */}
       </Container>
     </Box>
   );
