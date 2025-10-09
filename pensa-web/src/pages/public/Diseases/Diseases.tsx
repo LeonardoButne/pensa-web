@@ -222,7 +222,7 @@ const MOCK_DISEASES = [
     description:
       "A úlcera genital (Herpes genital) ou anorrectal é caracterizada por presença de borbulhas ou feridas na área genital.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images-diseases/Doenca-cardiaca.png",
+    imageUrl: "/images-diseases/herpes-genital.webp",
   },
   {
     id: 26,
@@ -230,7 +230,7 @@ const MOCK_DISEASES = [
     description:
       "Hipertensão ou Tensão alta é uma doença que ocorre quando a pressão que o sangue faz na parede das artérias para se movimentar é muito forte.",
     category: "CARDIOVASCULAR",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/hipertensao-arterial.jpg",
   },
   {
     id: 27,
@@ -238,7 +238,7 @@ const MOCK_DISEASES = [
     description:
       "SIDA é provocada pelo Vírus da Imunodeficiência Humana (HIV) que entra no organismo por contacto com uma pessoa infectada e destroi as nossas células de defesa.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/hiv.jpg",
   },
   {
     id: 28,
@@ -246,7 +246,7 @@ const MOCK_DISEASES = [
     description:
       "Malária é uma doença infecciosa causada pela picada de mosquito anofeles infectado que injecta o parasita quando pica a pessoa para se alimentar do sangue dela.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/malaria.jpg",
   },
   {
     id: 29,
@@ -254,22 +254,22 @@ const MOCK_DISEASES = [
     description:
       "É uma febre hemorrágica rara, mas grave, que afecta humanos e é causada pelo vírus Marburg.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/marburg.jpg",
   },
   {
     id: 30,
     name: "Noma",
     description:
       "O noma (o termo vem do grego e significa “devorar”) é uma doença necrosante destrutiva da boca e do rosto.",
-    category: "CHILD_HEALTH", // Geralmente afeta crianças
-    imageUrl: "/images/disease-placeholder.jpg",
+    category: "CHILD_HEALTH",
+    imageUrl: "/images-diseases/noma.avif",
   },
   {
     id: 31,
     name: "Periodontite",
     description: "É destruição do osso e dos tecidos que suportam o dente.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Periodontite.jpg",
   },
   {
     id: 32,
@@ -277,7 +277,7 @@ const MOCK_DISEASES = [
     description:
       "A Pólio é uma doença altamente contagiosa, que causa paralisia infantil e não tem cura. Em casos graves pode levar à morte.",
     category: "CHILD_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Polio.webp",
   },
   {
     id: 33,
@@ -285,7 +285,7 @@ const MOCK_DISEASES = [
     description:
       "A raiva é uma doença causada por um vírus que afecta animais mamíferos, incluindo o Homem.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Raiva.webp",
   },
   {
     id: 34,
@@ -293,7 +293,7 @@ const MOCK_DISEASES = [
     description:
       "A sífilis é uma infecção causada pela bactéria Treponema pallidum, transmitida por via sexual ou vertical (de mãe para o filho).",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Sifilis.webp",
   },
   {
     id: 35,
@@ -301,7 +301,7 @@ const MOCK_DISEASES = [
     description:
       "Suicídio é quando alguém tira a própria vida, movido por uma dor profunda que parece não ter fim. Muitas vezes, a pessoa já tentou antes ou deu sinais de que estava a sofrer.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/suicidio.jpg",
   },
   {
     id: 36,
@@ -309,7 +309,7 @@ const MOCK_DISEASES = [
     description:
       "O tabagismo é uma dependência da nicotina, substância presente no tabaco que leva ao uso contínuo de cigarros e outros produtos derivados.",
     category: "CHRONIC_DISEASES", // Dependência
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Tabagismo.jpg",
   },
   {
     id: 37,
@@ -317,7 +317,7 @@ const MOCK_DISEASES = [
     description:
       "É calcificação da placa bacteriana ao longo do tempo pelo efeito da saliva só por si não é doença, mas sua presença na superfície dentária origina outras doenças.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Tartaro.webp",
   },
   {
     id: 38,
@@ -325,7 +325,7 @@ const MOCK_DISEASES = [
     description:
       "Tuberculose é uma doença causada por uma bactéria que afecta principalmente os pulmões, mas pode afectar qualquer órgão do corpo como ossos, rins, e o cérebro.",
     category: "RESPIRATORY",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Tuberculose.webp",
   },
   {
     id: 39,
@@ -333,7 +333,7 @@ const MOCK_DISEASES = [
     description:
       "A Varíola dos Macacos (Mpox) é uma doença causada pelo vírus que infecta macacos. Pode ser transmitido através do contacto com animais infectados ou com uma pessoa infectada.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/variola-dos-macacos.jpg",
   },
   {
     id: 40,
@@ -341,7 +341,7 @@ const MOCK_DISEASES = [
     description:
       "É uma perturbação em que a pessoa sente desejo incontrolável de jogar, mesmo sabendo dos prejuízos. O jogo passa a ser o centro da vida.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/jogos-de-azar.png",
   },
   {
     id: 41,
@@ -349,12 +349,9 @@ const MOCK_DISEASES = [
     description:
       "É quando a pessoas sente necessidade constante de estar conectada, mesmo sem motivo claro e não conseguem controlar o tempo que passa online.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/vicio-redes-sociais.png",
   },
 ];
-// ===========================================
-// FIM DOS DADOS ESTÁTICOS
-// ===========================================
 
 const categories = [
   { value: "", label: "Todas as categorias" },
@@ -467,9 +464,9 @@ export function Diseases() {
   // e paginação direta no componente, como feito acima.
 
   return (
-    <Box py={60}>
+    <Box py={20}>
       <Container size="xl">
-        <Title order={1} ta="center" mb="md">
+        <Title order={1} ta="center" mb={10}>
           Doenças
         </Title>
         <Text ta="center" c="dimmed" mb={40} size="lg">
@@ -511,7 +508,7 @@ export function Diseases() {
         {/* Lista de doenças */}
         {!isLoading && data?.data.content && (
           <>
-            <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing="lg">
+            <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 5 }} spacing="lg">
               {data.data.content.map((disease) => (
                 <Card
                   key={disease.id}

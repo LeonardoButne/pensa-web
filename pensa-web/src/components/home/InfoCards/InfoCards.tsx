@@ -1,4 +1,12 @@
-import { Container, SimpleGrid, Card, Text, Title, Box } from "@mantine/core";
+import {
+  Container,
+  SimpleGrid,
+  Card,
+  Text,
+  Title,
+  Box,
+  rem,
+} from "@mantine/core";
 import classes from "./InfoCards.module.css";
 
 const cardsData = [
@@ -31,6 +39,16 @@ const cardsData = [
 export function InfoCards() {
   return (
     <Box py={60} bg="white">
+      <Title
+        order={4}
+        ta="center"
+        mb={{ base: rem(20), md: rem(30) }}
+        style={{ fontWeight: 400 }}
+        c="dimmed" // Cor mais suave para o título
+      >
+        O que fazemos
+      </Title>
+
       <Container size="xl">
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="lg">
           {cardsData.map((card, index) => (
