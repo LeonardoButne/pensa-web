@@ -23,7 +23,7 @@ export function Home() {
       <MentalHealth />
       <NewsSection />
       <FaqSimple />
-      <Newsletter />
+      {/* <Newsletter /> */}
     </>
   );
 }

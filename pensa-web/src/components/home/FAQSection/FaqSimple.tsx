@@ -45,8 +45,8 @@ export function FaqSimple() {
 
   return (
     <Container size="sm" className={classes.wrapper}>
-      <Title ta="center" className={classes.title}>
-        Perguntas frequentes sobre a Pensa
+      <Title size={25} mb={20} ta="center" className={classes.title}>
+        Perguntas frequentes sobre a PENSA
       </Title>
 
       <Accordion variant="separated">{items}</Accordion>

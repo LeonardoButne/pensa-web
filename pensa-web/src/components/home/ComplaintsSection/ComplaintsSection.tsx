@@ -34,7 +34,12 @@ const sdgData = [
 
 export function ComplaintSection() {
   return (
-    <Box py={{ base: rem(40), md: rem(0) }} bg="blue" mb={rem(40)} p={rem(20)}>
+    <Box
+      py={{ base: rem(40), md: rem(0) }}
+      bg="#00918b"
+      mb={rem(40)}
+      p={rem(20)}
+    >
       <Container size="lg">
         <Title order={3} ta="center" mb={rem(40)}>
           Canal de Queixas e Reclamações

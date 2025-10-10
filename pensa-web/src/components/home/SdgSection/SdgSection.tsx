@@ -38,7 +38,7 @@ const sdgData = [
 
 export function SdgSection() {
   return (
-    <Box py={{ base: rem(40), md: rem(80) }}>
+    <Box py={{ base: rem(40), mt: rem(40), mb: rem(40) }} bg="white">
       <Container size="lg">
         <Title order={3} ta="center" mb={rem(40)}>
           Nosso Compromisso com os Objectivos Globais

@@ -63,14 +63,8 @@ export function Footer() {
       <Container size="xl" className={classes.inner}>
         <div className={classes.logo}>
           <Group gap="xs" mb="md">
-            <Image src="/logo.svg" alt="PENSA" h={40} w="auto" />
-            <Text size="xl" fw={700} c="cyan.6">
-              PENSA
-            </Text>
+            <Image src="/logo-pensa.png" alt="PENSA" h={120} w="auto" />
           </Group>
-          <Text size="sm" c="dimmed" className={classes.description}>
-            Sistema de informação de saúde para Moçambique
-          </Text>
         </div>
 
         <div className={classes.groups}>{groups}</div>
@@ -107,7 +101,7 @@ export function Footer() {
             color="gray"
             variant="subtle"
             component="a"
-            href="https://instagram.com"
+            href="https://instagram.com/pensa.660"
             target="_blank"
           >
             <IconBrandInstagram size={18} stroke={1.5} />
@@ -117,7 +111,7 @@ export function Footer() {
             color="gray"
             variant="subtle"
             component="a"
-            href="https://facebook.com"
+            href="https://www.facebook.com/pensa660?_rdc=1&_rdr"
             target="_blank"
           >
             <IconBrandFacebook size={18} stroke={1.5} />
