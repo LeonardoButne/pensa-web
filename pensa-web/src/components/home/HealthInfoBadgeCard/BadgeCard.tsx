@@ -3,14 +3,6 @@ import { Box, Button, Card, Group, Text, Title } from "@mantine/core";
 import { Link } from "react-router-dom";
 import classes from "./BadgeCard.module.css";
 
-// interface Section {
-//   image: string; // caminho da imagem na pasta public
-//   title: string;
-//   items: string[];
-//   link: string;
-//   color: string;
-// }
-
 const sections = [
   {
     img: "/images-healthInfo/doencas.png",

@@ -437,32 +437,6 @@ export function Diseases() {
   };
   const isLoading = false; // Como os dados são estáticos, definimos isLoading como false
 
-  /* // ********* CÓDIGO ORIGINAL (Comentado para usar o MOCK) ********* const { data, isLoading } = useQuery(
-    ["diseases", page, debouncedSearch, category],
-    () => {
-      // Nota: O seu useQuery original não considerava o filtro de categoria.
-      // A implementação MOCK acima resolve isso estaticamente.
-      if (debouncedSearch) {
-        return diseasesService.search(debouncedSearch, page - 1, 12);
-      }
-      return diseasesService.getAll(page - 1, 12);
-    }
-  );
-  // ***************************************************************
-  */
-
-  // Resetar a página para 1 sempre que a busca ou categoria mudar
-  // Usamos um useEffect para monitorar as mudanças no debounce e categoria
-  // import { useEffect } from "react";
-  /*
-  useEffect(() => {
-      setPage(1);
-  }, [debouncedSearch, category]);
-  */
-
-  // NOTA: Para uma implementação estática mais limpa, usaremos o filtro
-  // e paginação direta no componente, como feito acima.
-
   return (
     <Box py={20}>
       <Container size="xl">

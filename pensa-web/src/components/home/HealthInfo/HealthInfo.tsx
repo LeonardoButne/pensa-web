@@ -55,10 +55,6 @@ export function HealthInfo() {
           Informação sobre Saúde
         </Title>
 
-        {/* 2. Aumentar o 'spacing' do SimpleGrid. 
-             Isso adiciona mais espaço entre os cards, forçando-os a serem mais estreitos 
-             para caberem na largura menor do Container.
-        */}
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="xl">
           {sections.map((section) => (
             <Card

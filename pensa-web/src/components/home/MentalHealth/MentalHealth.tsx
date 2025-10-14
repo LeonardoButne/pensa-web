@@ -35,10 +35,10 @@ export function MentalHealth() {
           */}
           <Paper
             ref={ref}
-            className={classes.videoWrapper} // Adapte ou crie este estilo no seu CSS
+            className={classes.videoWrapper}
             shadow="sm"
             radius="lg"
-            p="xl"
+            p={0}
             style={{ width: 550, height: 550, overflow: "hidden" }}
           >
             {/* 3. Usamos a tag <video> para arquivos locais/diretos.
