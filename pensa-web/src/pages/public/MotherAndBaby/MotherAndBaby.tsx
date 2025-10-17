@@ -95,7 +95,7 @@ export function MotherAndBaby() {
   return (
     <Box py={40}>
       <Container size="xl">
-        <Title order={1} ta="center" mb={10}>
+        <Title order={2} ta="center" mb={10}>
           Guia de Saúde Materno-Infantil
         </Title>
         <Text ta="center" c="dimmed" mb={40} size="lg">
@@ -135,6 +135,8 @@ export function MotherAndBaby() {
               destinationRoute = `/mae-bebe/calendario-vacinacao`; // ROTA SIMPLES!
             } else if (item.id === 4) {
               destinationRoute = `/mae-bebe/vacinas-essenciais`; // ROTA SIMPLES!
+            } else if (item.id === 5) {
+              destinationRoute = `/mae-bebe/amamentacao-banco-leite`; // ROTA SIMPLES!
             } else {
               // Usamos a rota TopicMonthDetail para conteúdo único
               destinationRoute = `/mae-bebe/${item.id}/mes/1`;

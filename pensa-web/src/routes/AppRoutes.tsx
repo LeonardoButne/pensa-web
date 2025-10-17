@@ -22,12 +22,13 @@ import { EmergencyDetail } from "../pages/public/EmergencyDetail/EmergencyDetail
 
 // Componentes da área Mãe e Bebê (ATUALIZADOS)
 import { MotherAndBaby } from "../pages/public/MotherAndBaby/MotherAndBaby"; // Lista de Tópicos (Nível 1)
-import { MonthlyGuideList } from "../pages/public/MotherAndBaby/MonthlyGuideList"; // Lista de Meses (Nível 2)
 import { TopicMonthDetail } from "../pages/public/MotherAndBaby/TopicMonthDetail";
 import { PregnancyPhases } from "../pages/public/MotherAndBaby/PregnancyPhases";
 import { BabyDevelopment } from "../pages/public/MotherAndBaby/BabyDevelopment";
 import { VaccinationCalendar } from "../pages/public/MotherAndBaby/VaccinationCalendar";
 import { EssentialVaccines } from "../pages/public/MotherAndBaby/EssentialVaccines";
+import { BreastfeedingGuide } from "../pages/public/MotherAndBaby/BreastfeedingGuide";
+import { HealthCenters } from "../pages/public/HealthCenters/HealthCenters";
 
 // Route Guards
 
@@ -42,16 +43,13 @@ export function AppRoutes() {
         <Route path="/doencas/:id" element={<DiseaseDetail />} />
         <Route path="/urgencias" element={<Emergencies />} />
         <Route path="/urgencias/:id" element={<EmergencyDetail />} />
-        {/* ROTAS MÃE E BEBÊ (ATUALIZADAS) */}
-        <Route path="/mae-e-bebe" element={<MotherAndBaby />} />
-        {/* 1. ROTA SIMPLES PARA GRAVIDEZ */}
+        <Route path="/centros-de-saude" element={<HealthCenters />} />
+        \ <Route path="/mae-e-bebe" element={<MotherAndBaby />} />
         <Route path="/mae-bebe/fases-gravidez" element={<PregnancyPhases />} />
-        {/* 2. Guia Completo: Para Desenvolvimento do Bebê (ID 2) */}
         <Route
           path="/mae-bebe/desenvolvimento-bebe"
           element={<BabyDevelopment />}
         />
-        {/* 3. Detalhe de Tópico/Mês: Usado para Vacinação e Banco de Leite */}
         <Route
           path="/mae-bebe/:topicId/mes/:monthId"
           element={<TopicMonthDetail />}
@@ -64,7 +62,10 @@ export function AppRoutes() {
           path="/mae-bebe/vacinas-essenciais"
           element={<EssentialVaccines />}
         />
-
+        <Route
+          path="/mae-bebe/amamentacao-banco-leite"
+          element={<BreastfeedingGuide />}
+        />
         {/* Outras Rotas Públicas */}
         <Route path="/medicos" element={<Doctors />} />
         <Route path="/servicos" element={<Services />} />

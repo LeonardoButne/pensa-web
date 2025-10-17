@@ -1,7 +1,10 @@
-import { IconArrowRight } from "@tabler/icons-react";
-import { Box, Button, Card, Group, Text, Title } from "@mantine/core";
+// =========================================================
+// ARQUIVO: BadgeCard.tsx (FINALIZADO com SimpleGrid)
+// =========================================================
+import { IconArrowRight, IconLocation } from "@tabler/icons-react";
+import { Box, Button, Card, Text, Title, SimpleGrid } from "@mantine/core"; // Adicionado SimpleGrid
 import { Link } from "react-router-dom";
-import classes from "./BadgeCard.module.css";
+// import classes from "./BadgeCard.module.css"; // Mantenha se você usa classes externas
 
 const sections = [
   {
@@ -32,19 +35,37 @@ const sections = [
     ],
     link: "/mae-e-bebe",
   },
+  {
+    img: "/images-healthInfo/centros-saude.png",
+    title: "Centros de Saúde",
+    items: [
+      "Hospitais e Clínicas",
+      "Localização por Província",
+      "Contactos de Emergência",
+      "Serviços Disponíveis",
+    ],
+    link: "/centros-de-saude",
+  },
 ];
 
 export function BadgeCard() {
   return (
-    <Group wrap="wrap">
+    // USAMOS SimpleGrid AQUI:
+    // - cols: 1 coluna no mobile (base), 2 colunas no tablet (sm), 4 colunas no desktop (lg)
+    <SimpleGrid
+      cols={{ base: 1, sm: 2, lg: 4 }}
+      spacing="xl"
+      style={{ margin: "0 auto", maxWidth: 1400 }} // Opcional: Centraliza e limita a largura se necessário
+    >
       {sections.map((section) => (
         <Card
           key={section.title}
           shadow="sm"
           padding="xl"
           radius="lg"
-          className={classes.card}
-          style={{ width: 300 }}
+          // className={classes.card}
+          // O width: 300px foi removido. O SimpleGrid define a largura automaticamente.
+          // style={{ width: 300 }} // Remova esta linha
         >
           {/* Imagem centralizada */}
           <Box
@@ -54,11 +75,19 @@ export function BadgeCard() {
               marginBottom: 16,
             }}
           >
-            <img
-              src={section.img}
-              alt={section.title}
-              style={{ width: 80, height: 80, objectFit: "contain" }}
-            />
+            {/* Se não tiver imagem, use um ícone como fallback */}
+            {section.img ? (
+              <img
+                src={section.img}
+                alt={section.title}
+                style={{ width: 80, height: 80, objectFit: "contain" }}
+              />
+            ) : (
+              <IconLocation
+                size={80}
+                style={{ color: "var(--mantine-color-teal-6)" }}
+              />
+            )}
           </Box>
 
           {/* Título */}
@@ -67,7 +96,11 @@ export function BadgeCard() {
           </Title>
 
           {/* Lista de itens */}
-          <Box component="ul" className={classes.list}>
+          <Box
+            component="ul"
+            // className={classes.list}
+            style={{ listStyleType: "disc", paddingLeft: "20px" }}
+          >
             {section.items.map((item) => (
               <Text key={item} component="li" size="sm" c="dimmed" mb="xs">
                 {item}
@@ -88,7 +121,7 @@ export function BadgeCard() {
           </Button>
         </Card>
       ))}
-    </Group>
+    </SimpleGrid>
   );
 }
 

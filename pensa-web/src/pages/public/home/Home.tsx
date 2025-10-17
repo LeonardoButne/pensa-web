@@ -18,7 +18,6 @@ export function Home() {
       <InfoCards />
       <SdgSection />
       <ComplaintSection />
-      <DiseaseOfMonth />
       <HealthInfo />
       <MentalHealth />
       <NewsSection />

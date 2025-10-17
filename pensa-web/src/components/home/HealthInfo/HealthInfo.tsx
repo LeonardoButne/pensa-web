@@ -36,6 +36,11 @@ const sections: HealthSection[] = [
     title: "Mãe e Bebé",
     link: "/mae-e-bebe",
   },
+  {
+    img: "/images-healthInfo/centros-saude.png",
+    title: "Centros de Saúde",
+    link: "/centros-de-saude",
+  },
 ];
 
 export function HealthInfo() {
@@ -55,7 +60,7 @@ export function HealthInfo() {
           Informação sobre Saúde
         </Title>
 
-        <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="xl">
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="xl">
           {sections.map((section) => (
             <Card
               key={section.title}

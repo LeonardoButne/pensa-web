@@ -14,11 +14,10 @@ import classes from "./Header.module.css";
 
 const links = [
   { link: "/", label: "Início" },
-  { link: "/servicos", label: "Serviços" },
   { link: "/doencas", label: "Doenças" },
   { link: "/urgencias", label: "Urgências" },
   { link: "mae-e-bebe", label: "Mãe e Bebê" },
-  { link: "/projectos", label: "Projectos" },
+  { link: "/centros-de-saude", label: "Centros de Saúde" },
   { link: "/sobre", label: "Sobre nós" },
 ];
 

@@ -7,15 +7,19 @@ import {
   SimpleGrid,
   ThemeIcon,
   Stack,
+  Image,
+  Accordion,
+  Group, // 👈 Importar o componente Image do Mantine
 } from "@mantine/core";
 import {
-  IconTarget,
-  IconEye,
   IconHeart,
   IconUsers,
   IconTrophy,
   IconWorld,
 } from "@tabler/icons-react";
+
+// 🚨 ASSUMINDO QUE ESTE É O CAMINHO CORRETO PARA SUA IMAGEM
+import detalhesImage from "/logo-pensa.png";
 
 const values = [
   {
@@ -42,59 +46,99 @@ const values = [
   },
 ];
 
+// 🚨 NOVO CONTEÚDO PARA O ACCORDION (resumo do texto fornecido)
+const contextItems = [
+  {
+    title: "O Mandato do MISAU e o PESS",
+    content:
+      "O Ministério da Saúde (MISAU) visa garantir que todos os moçambicanos desfrutem da melhor saúde possível. Para tal, elaborou o Plano Estratégico do Sector da Saúde (PESS) 2014-2019, focado em contribuir para o bem-estar da população, especialmente os grupos mais vulneráveis.",
+  },
+  {
+    title: "O Desafio da acessibilidade da informação",
+    content:
+      "Apesar da existência de informações vitais sobre saúde (prevenção, sintomas e tratamentos), o acesso é limitado. Campanhas tradicionais (e-mail/Internet, TV) não alcançam eficazmente as zonas recônditas, deixando a população mais necessitada privada de informações cruciais.",
+  },
+  {
+    title: "A solução PENSA: USSD (*660#)",
+    content:
+      "A Plataforma Educativa de Informação sobre a Saúde (PENSA), desenvolvida pela Source Code, resolve este problema, facultando informação grátis sobre a saúde (gerida pelo MISAU) através do USSD (*660#), acessível em qualquer telemóvel e operadora.",
+  },
+  {
+    title: "Funcionalidades chave e impacto na saúde pública",
+    content:
+      "A PENSA permite aos cidadãos registar problemas, consultar sintomas, precauções e informações para várias doenças (malária, HIV, TBC, etc.), e obter contactos de centros de saúde próximos. Toda a informação recolhida é visível num back-end website para uso dos funcionários da Saúde Pública.",
+  },
+];
+
 export function About() {
   return (
-    <Box py={60}>
+    <Box py={30}>
       <Container size="lg">
         {/* Hero Section */}
-        <Box ta="center" mb={60}>
-          <Title order={1} mb="md">
+        <Box ta="center" mb={30}>
+          <Title order={2} mb="md">
             Sobre a PENSA
           </Title>
-          <Text size="xl" c="dimmed">
+          {/* <Text size="xl" c="dimmed">
             Sistema de Informação de Saúde para Moçambique
-          </Text>
+          </Text> */}
         </Box>
 
-        {/* Missão */}
-        <Paper shadow="sm" radius="lg" p="xl" mb={40}>
-          <Stack gap="md">
-            <ThemeIcon size={60} radius="md" color="cyan">
-              <IconTarget size={32} />
-            </ThemeIcon>
-            <Title order={2}>Nossa Missão</Title>
-            <Text size="lg" c="dimmed">
-              Democratizar o acesso à informação de saúde em Moçambique através
-              de tecnologia inovadora e acessível. Através do código *660#,
-              conectamos pessoas a informações vitais sobre saúde, permitindo
-              que tomem decisões informadas sobre seu bem-estar e o de suas
-              famílias.
-            </Text>
-          </Stack>
-        </Paper>
+        {/* 🚨 NOVA SEÇÃO: IMAGEM + MISSÃO & VISÃO */}
+        <SimpleGrid
+          cols={{ base: 1, md: 2 }} // 1 coluna em mobile, 2 em desktop
+          spacing="xl"
+          mb={60}
+          // Usar align="center" ajuda a centralizar verticalmente o conteúdo
+          style={{ alignItems: "center" }}
+        >
+          {/* Coluna 1: Imagem */}
+          <Paper radius="lg">
+            <Image
+              src={detalhesImage}
+              alt="Detalhes do serviço de saúde"
+              radius="lg"
+              // Usar fit="cover" ou garantir o tamanho
+              style={{ height: "100%", objectFit: "cover" }}
+            />
+          </Paper>
 
-        {/* Visão */}
-        <Paper shadow="sm" radius="lg" p="xl" mb={60}>
-          <Stack gap="md">
-            <ThemeIcon size={60} radius="md" color="teal">
-              <IconEye size={32} />
-            </ThemeIcon>
-            <Title order={2}>Nossa Visão</Title>
-            <Text size="lg" c="dimmed">
-              Ser a principal plataforma de informação de saúde em Moçambique,
-              reconhecida pela qualidade, confiabilidade e impacto positivo na
-              vida das pessoas. Queremos um futuro onde cada moçambicano tenha
-              acesso fácil e rápido a informações de saúde confiáveis.
-            </Text>
-          </Stack>
-        </Paper>
+          {/* Coluna 2: Missão e Visão (Empilhados) */}
+          <Stack gap="xl">
+            {/* Missão */}
+            <Paper shadow="sm" radius="lg" p="xl" withBorder>
+              <Stack gap="md" mb={50}>
+                {/* <ThemeIcon size={60} radius="md" color="cyan">
+                  <IconTarget size={32} />
+                </ThemeIcon> */}
+                <Title order={4}>Missão</Title>
+                <Text size="lg" c="dimmed">
+                  Democratizar o acesso à informação de saúde em Moçambique
+                  através de tecnologia inovadora e acessível.
+                </Text>
+              </Stack>
 
-        {/* Valores */}
+              <Stack gap="md">
+                {/* <ThemeIcon size={60} radius="md" color="teal">
+                  <IconEye size={32} />
+                </ThemeIcon> */}
+                <Title order={4}>Visão</Title>
+                <Text size="lg" c="dimmed">
+                  Ser a principal plataforma de informação de saúde em
+                  Moçambique, reconhecida pela qualidade, confiabilidade e
+                  impacto positivo na vida das pessoas.
+                </Text>
+              </Stack>
+            </Paper>
+          </Stack>
+        </SimpleGrid>
+
+        {/* Valores (Mantido como estava) */}
         <Box mb={60}>
-          <Title order={2} ta="center" mb="xl">
-            Nossos Valores
+          <Title order={3} ta="center" mb="xl">
+            Valores
           </Title>
-          <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
+          <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="xl">
             {values.map((value, index) => (
               <Paper key={index} shadow="sm" radius="lg" p="xl">
                 <ThemeIcon
@@ -115,15 +159,15 @@ export function About() {
           </SimpleGrid>
         </Box>
 
-        {/* O que fazemos */}
-        <Paper shadow="sm" radius="lg" p="xl" bg="cyan.0">
+        {/* O que fazemos (Mantido como estava)
+        <Paper shadow="sm" radius="lg" p="xl" bg="cyan.0" mb={60}>
           <Title order={2} mb="xl">
             O que fazemos
           </Title>
           <SimpleGrid cols={{ base: 1, md: 2 }} spacing="lg">
             <Stack gap="sm">
               <Text fw={600} size="lg">
-                📱 Serviço *660#
+                Serviço *660#
               </Text>
               <Text c="dimmed">
                 Acesso rápido a informações de saúde via USSD, disponível em
@@ -132,7 +176,7 @@ export function About() {
             </Stack>
             <Stack gap="sm">
               <Text fw={600} size="lg">
-                💊 Informações sobre Doenças
+                Informações sobre Doenças
               </Text>
               <Text c="dimmed">
                 Base de dados completa sobre doenças, sintomas, tratamentos e
@@ -141,24 +185,15 @@ export function About() {
             </Stack>
             <Stack gap="sm">
               <Text fw={600} size="lg">
-                👨‍⚕️ Diretório de Médicos
+                Educação em Saúde
               </Text>
               <Text c="dimmed">
-                Conectamos pacientes com profissionais de saúde qualificados
+                Disseminação de informação para comunidades
               </Text>
             </Stack>
             <Stack gap="sm">
               <Text fw={600} size="lg">
-                🎓 Educação em Saúde
-              </Text>
-              <Text c="dimmed">
-                Programas de formação e disseminação de informação para
-                comunidades
-              </Text>
-            </Stack>
-            <Stack gap="sm">
-              <Text fw={600} size="lg">
-                🔔 Alertas de Saúde
+                Alertas de Saúde
               </Text>
               <Text c="dimmed">
                 Notificações sobre campanhas de vacinação e alertas sanitários
@@ -166,38 +201,49 @@ export function About() {
             </Stack>
             <Stack gap="sm">
               <Text fw={600} size="lg">
-                👶 Saúde Materna e Infantil
+                Saúde Materna e Infantil
               </Text>
               <Text c="dimmed">
                 Informações especializadas para mães e cuidados com crianças
               </Text>
             </Stack>
           </SimpleGrid>
-        </Paper>
+        </Paper> */}
 
-        {/* Impacto */}
+        {/* Impacto (Mantido como estava) */}
         <Box mt={60}>
-          <Title order={2} ta="center" mb="xl">
-            Nosso Impacto
+          <Title order={3} ta="center" mb="xl">
+            Impacto
           </Title>
-          <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="xl">
+          <SimpleGrid cols={{ base: 1, sm: 4 }} spacing="xl">
             <Paper shadow="sm" radius="lg" p="xl" ta="center">
               <Text size="48px" fw={700} c="cyan">
-                1M+
+                +652K
               </Text>
               <Text size="lg" fw={500} mt="xs">
-                Usuários Ativos
+                Usuários cadastrados
               </Text>
               <Text size="sm" c="dimmed" mt="xs">
-                Pessoas conectadas ao sistema
+                Pessoas que se cadastraram no sistema
               </Text>
             </Paper>
             <Paper shadow="sm" radius="lg" p="xl" ta="center">
               <Text size="48px" fw={700} c="cyan">
-                500+
+                +77.6M
               </Text>
               <Text size="lg" fw={500} mt="xs">
-                Doenças Catalogadas
+                Total de acessos
+              </Text>
+              <Text size="sm" c="dimmed" mt="xs">
+                Pessoas que acederam ao sistema
+              </Text>
+            </Paper>
+            <Paper shadow="sm" radius="lg" p="xl" ta="center">
+              <Text size="48px" fw={700} c="cyan">
+                +40
+              </Text>
+              <Text size="lg" fw={500} mt="xs">
+                Doenças catalogadas
               </Text>
               <Text size="sm" c="dimmed" mt="xs">
                 Informações completas e confiáveis
@@ -216,6 +262,33 @@ export function About() {
             </Paper>
           </SimpleGrid>
         </Box>
+        {/* 🚨 NOVA SECÇÃO: CONTEXTO E NECESSIDADE (ACORDION) */}
+        <Paper shadow="lg" mt={60} radius="lg" p="xl" withBorder>
+          <Group mb="xl" gap="sm">
+            {/* <ThemeIcon size={40} radius="md" color="blue">
+              <IconSitemap size={24} />
+            </ThemeIcon> */}
+            <Title order={3}>Contexto e necessidade da PENSA</Title>
+          </Group>
+
+          <Accordion variant="separated" defaultValue="MISAU">
+            {contextItems.map((item, index) => (
+              <Accordion.Item key={index} value={String(index)}>
+                <Accordion.Control>
+                  <Title order={4} fw={600} c="dark.7">
+                    {item.title}
+                  </Title>
+                </Accordion.Control>
+                <Accordion.Panel>
+                  <Text c="dimmed" size="md">
+                    {item.content}
+                  </Text>
+                </Accordion.Panel>
+              </Accordion.Item>
+            ))}
+          </Accordion>
+        </Paper>
+        {/* FIM DA NOVA SECÇÃO */}
       </Container>
     </Box>
   );
