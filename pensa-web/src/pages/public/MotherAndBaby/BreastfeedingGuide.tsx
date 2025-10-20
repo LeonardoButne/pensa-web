@@ -1,7 +1,5 @@
-// =========================================================
-// ARQUIVO: BreastfeedingGuide.tsx (ATUALIZADO)
-// =========================================================
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import {
   Container,
   Title,
@@ -99,6 +97,14 @@ export function BreastfeedingGuide() {
     "breastfeedingGuide",
     mockService.getGuide
   );
+
+  // ===============================================
+  // ✨ NOVO: useEffect para rolar para o topo
+  // ===============================================
+  useEffect(() => {
+    // Rola a janela para o topo apenas na montagem inicial do componente.
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []); // Array de dependências vazio garante que ele execute apenas uma vez
 
   const contentList: GuideSection[] = data?.data || [];
 
@@ -200,4 +206,3 @@ export function BreastfeedingGuide() {
     </Box>
   );
 }
-

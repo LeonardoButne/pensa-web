@@ -5,29 +5,17 @@ import { Layout } from "../components/layout/layout";
 import { Home } from "../pages/public/home/Home";
 import { Diseases } from "../pages/public/Diseases/Diseases";
 import { DiseaseDetail } from "../pages/public/DiseaseDetail/DiseaseDetail";
-import { Doctors } from "../pages/public/Doctors/Doctors";
-import { Services } from "../pages/public/Services/Services";
-import { Projects } from "../pages/public/Projects/Projects";
 import { About } from "../pages/public/About/About";
-import { FAQ } from "../pages/public/FAQ/FAQ";
-
-// Admin Pages
-import { AdminLayout } from "../components/layout/AdminLayout";
-import { Login } from "../pages/admin/Login/Login";
-import { Dashboard } from "../pages/admin/Dashboard/Dashboard";
-import { DiseasesManagement } from "../pages/admin/DiseasesManagement/DiseasesManagement";
-import { PrivateRoute } from "./PrivateRoute";
-import { Emergencies } from "../pages/public/Emergencies/Emergencies";
-import { EmergencyDetail } from "../pages/public/EmergencyDetail/EmergencyDetail";
 
 // Componentes da área Mãe e Bebê (ATUALIZADOS)
 import { MotherAndBaby } from "../pages/public/MotherAndBaby/MotherAndBaby"; // Lista de Tópicos (Nível 1)
-import { TopicMonthDetail } from "../pages/public/MotherAndBaby/TopicMonthDetail";
 import { PregnancyPhases } from "../pages/public/MotherAndBaby/PregnancyPhases";
 import { BabyDevelopment } from "../pages/public/MotherAndBaby/BabyDevelopment";
 import { VaccinationCalendar } from "../pages/public/MotherAndBaby/VaccinationCalendar";
 import { EssentialVaccines } from "../pages/public/MotherAndBaby/EssentialVaccines";
 import { BreastfeedingGuide } from "../pages/public/MotherAndBaby/BreastfeedingGuide";
+
+// Centros de Saúde
 import { HealthCenters } from "../pages/public/HealthCenters/HealthCenters";
 
 // Route Guards
@@ -41,18 +29,13 @@ export function AppRoutes() {
         {/* Rotas de Doenças e Urgências */}
         <Route path="/doencas" element={<Diseases />} />
         <Route path="/doencas/:id" element={<DiseaseDetail />} />
-        <Route path="/urgencias" element={<Emergencies />} />
-        <Route path="/urgencias/:id" element={<EmergencyDetail />} />
         <Route path="/centros-de-saude" element={<HealthCenters />} />
+        {/* Rotas da área Mãe e Bebê */}
         \ <Route path="/mae-e-bebe" element={<MotherAndBaby />} />
         <Route path="/mae-bebe/fases-gravidez" element={<PregnancyPhases />} />
         <Route
           path="/mae-bebe/desenvolvimento-bebe"
           element={<BabyDevelopment />}
-        />
-        <Route
-          path="/mae-bebe/:topicId/mes/:monthId"
-          element={<TopicMonthDetail />}
         />
         <Route
           path="/mae-bebe/calendario-vacinacao"
@@ -67,30 +50,8 @@ export function AppRoutes() {
           element={<BreastfeedingGuide />}
         />
         {/* Outras Rotas Públicas */}
-        <Route path="/medicos" element={<Doctors />} />
-        <Route path="/servicos" element={<Services />} />
-        <Route path="/projetos" element={<Projects />} />
         <Route path="/sobre" element={<About />} />
-        <Route path="/faq" element={<FAQ />} />
       </Route>
-
-      {/* Admin Routes */}
-      <Route path="/admin/login" element={<Login />} />
-
-      <Route
-        path="/admin"
-        element={
-          <PrivateRoute>
-            <AdminLayout />
-          </PrivateRoute>
-        }
-      >
-        <Route index element={<Navigate to="/admin/dashboard" replace />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="doencas" element={<DiseasesManagement />} />
-        {/* <Route path="mensagens" element={<MessagesManagement />} /> */}
-      </Route>
-
       {/* 404 */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

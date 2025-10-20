@@ -760,7 +760,7 @@ export function DiseaseDetail() {
   const { id } = useParams<{ id: string }>();
 
   // A tipagem do useQuery agora usa o tipo DiseaseDetailData
-  const { data, isLoading, error } = useQuery(
+  const { data, isLoading } = useQuery(
     ["disease", id],
     // Substituindo diseasesService.getById pela função de mock
     () => mockDiseasesService.getById(Number(id)),

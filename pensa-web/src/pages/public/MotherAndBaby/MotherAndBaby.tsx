@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react"; // ✨ Adicionado useEffect
 import {
   Container,
   Title,
@@ -78,6 +78,14 @@ export function MotherAndBaby() {
   const [category, setCategory] = useState("");
   const [debouncedSearch] = useDebouncedValue(search, 500);
 
+  // ===============================================
+  // ✨ NOVO: useEffect para rolar para o topo
+  // ===============================================
+  useEffect(() => {
+    // Rola a janela para o topo com animação suave
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [category, debouncedSearch]); // Rola quando a categoria ou o termo de busca (debounced) muda.
+
   // Lógica de filtragem no lado do cliente
   const filteredTopics = MOCK_TOPICS.filter((topic) => {
     const categoryMatch = !category || topic.category === category;
@@ -88,9 +96,7 @@ export function MotherAndBaby() {
     return categoryMatch && searchMatch;
   });
 
-  // Neste nível, não há paginação real, apenas a exibição dos tópicos.
   const content = filteredTopics;
-  const isLoading = false; // Mock
 
   return (
     <Box py={40}>
@@ -202,4 +208,3 @@ export function MotherAndBaby() {
     </Box>
   );
 }
-

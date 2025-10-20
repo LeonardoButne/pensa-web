@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Container,
   Title,
@@ -20,14 +20,12 @@ import { Link } from "react-router-dom";
 import { useDebouncedValue } from "@mantine/hooks";
 
 // ===========================================
-// ✨ DADOS ESTÁTICOS (MOCK) - REVISADO PARA URGÊNCIAS
+// ✨ DADOS ESTÁTICOS (MOCK) - MANTIDOS AQUI
 // ===========================================
 const MOCK_EMERGENCIES = [
   {
     id: 1,
     name: "Queimaduras",
-    // Descrição simplificada/removida para o display do Card
-    // description: "Passos imediatos para tratar diferentes graus de queimadura.",
     category: "TRAUMA",
     imageUrl: "/images-urgencias/queimaduras.jpg",
   },
@@ -59,55 +57,20 @@ const categories = [
   { value: "PEDIÁTRICA", label: "Emergências Pediátricas" },
 ];
 
-// Funções de MOCK ajustadas para MOCK_EMERGENCIES
-const mockEmergenciesService = {
-  // Simula a busca e a paginação da API
-  getAll: (page: number, size: number) => {
-    const start = (page - 1) * size;
-    const end = start + size;
-    const content = MOCK_EMERGENCIES.slice(start, end);
-    const totalPages = Math.ceil(MOCK_EMERGENCIES.length / size);
-
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          data: {
-            content,
-            totalPages,
-          },
-        });
-      }, 500); // Simula um pequeno delay da rede
-    });
-  },
-
-  // Simula a pesquisa e a paginação
-  search: (searchTerm: string, page: number, size: number) => {
-    const filtered = MOCK_EMERGENCIES.filter((d) =>
-      d.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    const start = (page - 1) * size;
-    const end = start + size;
-    const content = filtered.slice(start, end);
-    const totalPages = Math.ceil(filtered.length / size);
-
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          data: {
-            content,
-            totalPages,
-          },
-        });
-      }, 500); // Simula um pequeno delay da rede
-    });
-  },
-};
-
 export function Emergencies() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [debouncedSearch] = useDebouncedValue(search, 500);
+
+  // ===============================================
+  // ✨ NOVO: useEffect para rolar para o topo
+  // ===============================================
+  useEffect(() => {
+    // Rola a janela para o topo com animação suave
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page, category, debouncedSearch]);
+  // Rola quando a página, categoria ou o termo de busca (debounced) muda.
 
   // Filtra as urgências pelo Mock antes de passar para a paginação/busca
   const filteredMock = MOCK_EMERGENCIES.filter((emergency) => {
@@ -177,7 +140,6 @@ export function Emergencies() {
         {/* Lista de emergências */}
         {!isLoading && data?.data.content && (
           <>
-            {/* Ajuste no SimpleGrid: 1 (celular), 2 (tablet), 3 (desktop pequeno), 4 (desktop grande) */}
             <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 5 }} spacing="lg">
               {data.data.content.map((emergency) => (
                 <Card
@@ -205,8 +167,6 @@ export function Emergencies() {
                   <Text fw={700} size="ml" mt="md" lineClamp={2} ta="center">
                     {emergency.name}
                   </Text>
-
-                  {/* REMOVEMOS A TEXT DESCRIPTION AQUI */}
 
                   <Button
                     variant="light"

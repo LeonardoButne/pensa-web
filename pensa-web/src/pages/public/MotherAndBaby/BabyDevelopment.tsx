@@ -10,17 +10,11 @@ import {
   Paper,
   Group,
   Divider,
-  Badge,
   Button,
   Center,
   Loader,
 } from "@mantine/core";
-import {
-  IconArrowLeft,
-  IconHeartbeat,
-  IconCheckupList,
-  IconBabyBottle,
-} from "@tabler/icons-react";
+import { IconArrowLeft } from "@tabler/icons-react";
 import { useQuery } from "react-query";
 
 // ===========================================

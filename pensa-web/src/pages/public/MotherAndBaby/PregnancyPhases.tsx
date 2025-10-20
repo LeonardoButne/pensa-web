@@ -16,11 +16,7 @@ import {
   Center,
   Loader,
 } from "@mantine/core";
-import {
-  IconArrowLeft,
-  IconStethoscope,
-  IconCheckupList,
-} from "@tabler/icons-react";
+import { IconArrowLeft } from "@tabler/icons-react";
 // Assumindo que você usa react-query para carregar dados reais
 // Vou usar um MOCK para a função de busca
 import { useQuery } from "react-query";

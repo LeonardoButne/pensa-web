@@ -10,7 +10,6 @@ import {
   Badge,
   Button,
   Group,
-  Divider,
   Loader,
   Center,
 } from "@mantine/core";
@@ -18,9 +17,7 @@ import {
   IconArrowLeft,
   IconAlertCircle,
   IconFirstAidKit,
-  IconShieldCheck,
   IconForbid, // Ícone para "O que não fazer"
-  IconAmbulance, // Ícone para "Ação Rápida"
   IconBulb, // Ícone para "Precauções"
 } from "@tabler/icons-react";
 import { useQuery } from "react-query";

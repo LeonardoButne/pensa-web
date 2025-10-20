@@ -15,13 +15,7 @@ import {
   Loader,
   Grid,
 } from "@mantine/core";
-import {
-  IconArrowLeft,
-  IconVaccine,
-  IconShieldLock,
-  IconAlertCircle,
-  IconPill,
-} from "@tabler/icons-react";
+import { IconArrowLeft } from "@tabler/icons-react";
 import { useQuery } from "react-query";
 
 // ===========================================

@@ -8,7 +8,6 @@ import {
   Anchor,
 } from "@mantine/core";
 import {
-  IconBrandTwitter,
   IconBrandYoutube,
   IconBrandInstagram,
   IconBrandFacebook,
