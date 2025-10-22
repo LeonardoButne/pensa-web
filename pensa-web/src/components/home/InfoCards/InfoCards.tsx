@@ -7,7 +7,7 @@ import {
   Box,
   rem,
 } from "@mantine/core";
-import classes from "./InfoCards.module.css";
+import classes from "./infoCards.module.css";
 
 const cardsData = [
   {
