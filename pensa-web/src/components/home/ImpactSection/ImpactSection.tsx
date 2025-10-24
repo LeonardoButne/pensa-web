@@ -39,8 +39,8 @@ export function ImpactSection() {
   return (
     <Box mt={10} py={40}>
       {/* Use size="lg" ou "xl" para limitar a largura máxima e adicionar padding lateral */}
-      <Container size="xl">
-        <Title order={4} ta="center" mb={60} fw={700}>
+      <Container size="xl" mb={60}>
+        <Title order={4} ta="center" mb={60} fw={600} c="dimmed">
           Impacto
         </Title>
 

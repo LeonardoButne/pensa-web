@@ -16,7 +16,7 @@ export function Home() {
       <PartnersSection />
       <InfoCards />
       <ImpactSection />
-      <SdgSection />
+      {/* <SdgSection /> */}
       <ComplaintSection />
       <HealthInfo />
       <MentalHealth />
