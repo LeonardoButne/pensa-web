@@ -56,7 +56,7 @@ const contextItems = [
   {
     title: "O Desafio da acessibilidade da informação",
     content:
-      "Apesar da existência de informações vitais sobre saúde (prevenção, sintomas e tratamentos), o acesso é limitado. Campanhas tradicionais (e-mail/Internet, TV) não alcançam eficazmente as zonas recônditas, deixando a população mais necessitada privada de informações cruciais.",
+      "Apesar da existência de informações vitais sobre saúde (prevenção, sintomas e tratamentos), o acesso é limitado. Campanhas tradicionais (e-mail/Internet, TV) não alcançam de forma eficaz as zonas recônditas, deixando a população mais necessitada privada de informações cruciais.",
   },
   {
     title: "A solução PENSA: USSD (*660#)",

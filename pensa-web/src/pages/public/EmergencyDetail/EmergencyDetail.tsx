@@ -23,7 +23,7 @@ import {
 import { useQuery } from "react-query";
 
 // ===========================================
-// 1. INTERFACE E DADOS (MOCK) - REVISADOS PARA URGÊNCIAS
+// 1. INTERFACE E DADOS (MOCK) - REVISADOS PARA Primeiros socorros
 // ===========================================
 
 interface EmergencyDetailData {
@@ -154,7 +154,7 @@ export function EmergencyDetail() {
               mt="lg"
               leftSection={<IconArrowLeft size={16} />}
             >
-              Voltar para Urgências
+              Voltar para Primeiros socorros
             </Button>
           </Box>
         </Center>

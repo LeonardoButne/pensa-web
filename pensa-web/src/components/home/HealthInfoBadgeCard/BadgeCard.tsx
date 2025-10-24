@@ -15,12 +15,12 @@ const sections = [
   },
   {
     img: "/images-healthInfo/urgencias.png",
-    title: "Urgências",
+    title: "Primeiros socorros",
     items: [
       "Ataques cardíacos",
       "Hemorragias",
       "Primeiros socorros / Trauma",
-      "Urgências respiratórias",
+      "Primeiros socorros respiratórias",
     ],
     link: "/urgencias",
   },

@@ -28,8 +28,8 @@ const sections: HealthSection[] = [
   },
   {
     img: "/images-healthInfo/urgencias.png",
-    title: "Urgências",
-    link: "/urgencias",
+    title: "Primeiros socorros",
+    link: "/primeiros-socoros",
   },
   {
     img: "/images-healthInfo/mae-e-bebe.png",

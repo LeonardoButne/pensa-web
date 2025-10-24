@@ -1,5 +1,5 @@
 // =========================================================
-// ARQUIVO: HealthCenters.tsx (AJUSTADO com base no mock `id_of_type`)
+// ARQUIVO: HealthCenters.tsx (COMPLETO, incluindo o conteúdo do Card)
 // =========================================================
 import { useState, useMemo, useEffect } from "react";
 import {
@@ -28,24 +28,18 @@ import {
 } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { useDebouncedValue } from "@mantine/hooks";
-import { CENTERS } from "./mockHealthCenters"; // Presume-se que o mock está aqui
+import { CENTERS } from "./mockHealthCenters";
+import { DISTRICTS } from "./mockDistricts";
 
-// ===========================================
-// 1. ESTRUTURAS DE DADOS
-// ===========================================
-
-// ... (Outras interfaces e Mocks: Province, Type, District, PROVINCES, TYPES, DISTRICTS) ...
-
+// ... (Interfaces e Mocks PROVINCES, TYPES, DISTRICTS) ...
 interface Province {
   id: number;
   name: string;
 }
-
 interface Type {
   id: number;
   name: string;
 }
-
 interface District {
   id: number;
   province_id: number;
@@ -63,16 +57,15 @@ const PROVINCES: Province[] = [
 
 const TYPES: Type[] = [
   { id: 1, name: "Unidades sanitárias" },
-  { id: 2, name: "Servico SAAJ" },
-  { id: 3, name: "Auto-Teste HIV" },
-  { id: 4, name: "Postos de Testagem" },
+  { id: 6, name: "Servico SAAJ" },
+  { id: 7, name: "Auto-Teste HIV" },
+  { id: 3, name: "Postos de Testagem" },
   { id: 5, name: "Farmácias" },
-  { id: 6, name: "Postos de Vacinação" },
+  { id: 2, name: "Postos de Vacinação" },
 ];
 
-const DISTRICTS: District[] = [
-  // ... (Lista completa de distritos) ...
-];
+// Supondo que DISTRICTS foi movido para mockDistricts.ts
+// const DISTRICTS: District[] = [...];
 
 const ITEMS_PER_PAGE = 12;
 
@@ -81,15 +74,15 @@ export function HealthCenters() {
   const [selectedProvinceId, setSelectedProvinceId] = useState<string | null>(
     null
   );
-  // 🟢 NOVO ESTADO: Para o filtro de Tipo
   const [selectedTypeId, setSelectedTypeId] = useState<string | null>(null);
+  const [selectedDistrictId, setSelectedDistrictId] = useState<string | null>(
+    null
+  );
 
   const [debouncedSearch] = useDebouncedValue(search, 300);
-
-  // 1. ESTADO DA PAGINAÇÃO
   const [activePage, setPage] = useState(1);
 
-  // Mapeamento para os Selects
+  // Mapeamento de Opções
   const provinceOptions = PROVINCES.map((p) => ({
     value: String(p.id),
     label: p.name,
@@ -100,21 +93,49 @@ export function HealthCenters() {
     label: t.name,
   }));
 
+  const districtOptions = useMemo(() => {
+    if (!selectedProvinceId) {
+      return [];
+    }
+    const provinceIdNum = parseInt(selectedProvinceId);
+    return DISTRICTS.filter((d) => d.province_id === provinceIdNum).map(
+      (d) => ({
+        // AQUI: Usamos uma chave composta "province_id-district_id" como o valor
+        value: `${d.province_id}-${d.id}`,
+        label: d.name,
+      })
+    );
+  }, [selectedProvinceId]); // Re-calcula quando a província muda
+
+  useEffect(() => {
+    setSelectedDistrictId(null);
+  }, [selectedProvinceId]);
+
   // 2. Lógica de Filtragem e Paginação
   const { paginatedCenters, totalPages } = useMemo(() => {
     let list = CENTERS;
 
-    // 2.1. FILTRO DE PROVÍNCIA
     if (selectedProvinceId) {
       list = list.filter((c) => String(c.province_id) === selectedProvinceId);
     }
 
-    // 🟢 AJUSTADO: 2.2. FILTRO DE TIPO - USANDO c.id_of_type
-    if (selectedTypeId) {
-      list = list.filter((c) => String(c.id_of_type) === selectedTypeId); // 👈 CORREÇÃO PRINCIPAL
+    if (selectedProvinceId && selectedDistrictId) {
+      // CORREÇÃO CRÍTICA: Desestrutura a chave composta "provinceId-districtId"
+      const [filterProvinceId, filterDistrictId] =
+        selectedDistrictId.split("-");
+
+      // Garante que o centro corresponda tanto à Província quanto ao Distrito
+      list = list.filter(
+        (c) =>
+          String(c.province_id) === filterProvinceId &&
+          String(c.district_id) === filterDistrictId
+      );
     }
 
-    // 2.3. FILTRO DE PESQUISA
+    if (selectedTypeId) {
+      list = list.filter((c) => String(c.id_of_type) === selectedTypeId);
+    }
+
     if (debouncedSearch) {
       const lowerSearch = debouncedSearch.toLowerCase();
       list = list.filter(
@@ -124,11 +145,8 @@ export function HealthCenters() {
       );
     }
 
-    // 2.4. CÁLCULO DA PAGINAÇÃO
     const totalCount = list.length;
     const calculatedTotalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
-
-    // 2.5. APLICAR PAGINAÇÃO
     const start = (activePage - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
     const paginatedCenters = list.slice(start, end);
@@ -139,20 +157,24 @@ export function HealthCenters() {
       totalCount,
       filteredListLength: totalCount,
     };
-  }, [selectedProvinceId, selectedTypeId, debouncedSearch, activePage]); // 🚨 selectedTypeId adicionado
+  }, [
+    selectedProvinceId,
+    selectedDistrictId,
+    selectedTypeId,
+    debouncedSearch,
+    activePage,
+  ]);
 
-  // 3. EFEITO PARA RESETAR A PÁGINA QUANDO OS FILTROS MUDAM
   useEffect(() => {
     if (activePage !== 1) {
       setPage(1);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedProvinceId, selectedTypeId, debouncedSearch]); // 🚨 selectedTypeId adicionado
+  }, [selectedProvinceId, selectedDistrictId, selectedTypeId, debouncedSearch]);
 
   return (
     <Box py={40} bg="gray.0">
       <Container size="xl">
-        {/* Botão de voltar (Inalterado) */}
         <Button
           component={Link}
           to="/"
@@ -166,7 +188,6 @@ export function HealthCenters() {
         </Button>
 
         <Paper shadow="lg" radius="lg" p="xl" withBorder>
-          {/* Título e Descrição (Inalterado) */}
           <Center mb="xl">
             <Group>
               <Title order={2} fw={700} size={40} c="dark.7">
@@ -182,9 +203,9 @@ export function HealthCenters() {
 
           <Divider mb="xl" />
 
-          {/* Filtros */}
-          <Group mb="xl" grow>
-            {/* Filtro de Província (Inalterado) */}
+          {/* Filtros: SimpleGrid para Responsividade */}
+          <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="md" mb="xl">
+            {/* Filtro de Província */}
             <Select
               placeholder="Filtrar por Província"
               data={provinceOptions}
@@ -193,37 +214,54 @@ export function HealthCenters() {
               onChange={setSelectedProvinceId}
               clearable
             />
-            {/* Filtro de Pesquisa (Inalterado) */}
+
+            {/* Filtro de Distrito */}
+            <Select
+              placeholder="Filtrar por Distrito"
+              data={districtOptions}
+              size="md"
+              value={selectedDistrictId}
+              onChange={setSelectedDistrictId}
+              clearable
+              disabled={!selectedProvinceId || districtOptions.length === 0}
+              nothingFoundMessage={
+                selectedProvinceId
+                  ? "Nenhum distrito encontrado"
+                  : "Selecione uma província primeiro"
+              }
+            />
+
+            {/* Filtro de Tipo */}
+            <Select
+              placeholder="Filtrar por tipo"
+              data={typeOptions}
+              size="md"
+              value={selectedTypeId}
+              onChange={setSelectedTypeId}
+              clearable
+            />
+
+            {/* Filtro de Pesquisa */}
             <TextInput
-              placeholder="Pesquisar por nome ou endereço do centro..."
+              placeholder="Pesquisar por nome ou endereço..."
               leftSection={<IconSearch size={16} />}
               size="md"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            {/* 🟢 CORRIGIDO: Filtro de Tipo */}
-            <Select
-              placeholder="Filtrar por tipo"
-              data={typeOptions}
-              size="md"
-              value={selectedTypeId} // 👈 Usa o novo estado
-              onChange={setSelectedTypeId} // 👈 Atualiza o novo estado
-              clearable
-            />
-          </Group>
+          </SimpleGrid>
 
           {/* Resultados */}
           {paginatedCenters.length > 0 ? (
             <>
-              {/* Grid de Cards */}
               <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="xl" mb="xl">
                 {paginatedCenters.map((center) => {
                   const provinceName =
                     PROVINCES.find((p) => p.id === center.province_id)?.name ||
                     "Desconhecida";
-                  // 🟢 AJUSTADO: Pega o nome do tipo diretamente do mock (center.type)
                   const typeName = center.type;
 
+                  // 💡 INÍCIO DO CONTEÚDO DO CARD OMITIDO 💡
                   return (
                     <Card
                       key={center.id}
@@ -236,15 +274,17 @@ export function HealthCenters() {
                         <Title order={4} fw={700} lineClamp={2} c="blue.7">
                           {center.name}
                         </Title>
-                        {/* Exibir o tipo no Badge, usando o campo 'type' do mock */}
                         <Badge color="blue" variant="light" size="md">
                           {typeName}
                         </Badge>
                       </Group>
+
+                      {/* Badge da Província */}
                       <Badge color="cyan" variant="filled" size="sm" mb="xs">
                         {provinceName}
                       </Badge>
-                      {/* ... (Restante do Card Inalterado) ... */}
+
+                      {/* Endereço */}
                       <Text size="sm" c="dimmed" lineClamp={2} mb="sm">
                         <IconMapPin
                           size={14}
@@ -255,19 +295,25 @@ export function HealthCenters() {
                         />
                         {center.address || "Endereço não disponível"}
                       </Text>
+
                       <Divider my="sm" />
-                      {center.telephone && String(center.telephone).trim() && (
-                        <Group gap="xs" mb="xs">
-                          <IconPhone
-                            size={16}
-                            color="var(--mantine-color-gray-6)"
-                          />
-                          <Text size="sm" fw={500}>
-                            Telefone: {center.telephone}
-                          </Text>
-                        </Group>
-                      )}
-                      {center.email && (
+
+                      {/* 🟢 TELEFONE CONDICIONAL */}
+                      {center.telephone &&
+                        String(center.telephone).trim() !== "" && (
+                          <Group gap="xs" mb="xs">
+                            <IconPhone
+                              size={16}
+                              color="var(--mantine-color-gray-6)"
+                            />
+                            <Text size="sm" fw={500}>
+                              Telefone: {center.telephone}
+                            </Text>
+                          </Group>
+                        )}
+
+                      {/* 🟢 EMAIL CONDICIONAL (Usando verificação robusta) */}
+                      {center.email && center.email.trim() !== "" && (
                         <Group gap="xs">
                           <IconMail
                             size={16}
@@ -282,8 +328,9 @@ export function HealthCenters() {
                   );
                 })}
               </SimpleGrid>
+              {/* 💡 FIM DO CONTEÚDO DO CARD OMITIDO 💡 */}
 
-              {/* Componente de Paginação (Inalterado) */}
+              {/* Componente de Paginação */}
               {totalPages > 1 && (
                 <Center mt="xl">
                   <Pagination

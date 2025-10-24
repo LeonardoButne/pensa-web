@@ -72,7 +72,7 @@ export function Emergencies() {
   }, [page, category, debouncedSearch]);
   // Rola quando a página, categoria ou o termo de busca (debounced) muda.
 
-  // Filtra as urgências pelo Mock antes de passar para a paginação/busca
+  // Filtra as Primeiros socorros pelo Mock antes de passar para a paginação/busca
   const filteredMock = MOCK_EMERGENCIES.filter((emergency) => {
     const categoryMatch = !category || emergency.category === category;
     const searchMatch =

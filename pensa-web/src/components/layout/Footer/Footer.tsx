@@ -81,7 +81,7 @@ export function Footer() {
             color="white"
             variant="subtle"
             component="a"
-            href="https://tiktok.com"
+            href="https://tiktok.com/@pensa660"
             target="_blank"
           >
             <IconBrandTiktok size={200} stroke={1.5} />

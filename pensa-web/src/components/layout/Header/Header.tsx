@@ -15,7 +15,7 @@ import classes from "./Header.module.css";
 const links = [
   { link: "/", label: "Início" },
   { link: "/doencas", label: "Doenças" },
-  { link: "/urgencias", label: "Urgências" },
+  { link: "/primeiros-socoros", label: "Primeiros socorros" },
   { link: "/mae-e-bebe", label: "Mãe e bebê" },
   { link: "/centros-de-saude", label: "Unidades sanitárias" },
   { link: "/sobre", label: "Sobre nós" },

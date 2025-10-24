@@ -15,20 +15,20 @@ const sdgData = [
     title: "+112.080",
     iconSrc: "/images-complaints/medicamentos.png",
     description:
-      "Denuncias sobre falta de medicamentos e outros produtos essenciais nas unidades sanitárias.",
+      "Denúncias sobre falta de medicamentos e outros produtos essenciais nas unidades sanitárias.",
   },
   {
     id: 2,
     title: "+199.058",
     iconSrc: "/images-complaints/review.png",
-    description: "Denuncias sobre mau atendimento nas unidades sanitárias.",
+    description: "Denúncias sobre mau atendimento nas unidades sanitárias.",
   },
   {
     id: 3,
     title: "+96.804",
     iconSrc: "/images-complaints/say-no.png",
     description:
-      "Desuncias sobre cobranças indevidas por serviços que deveriam ser gratuitos.",
+      "Denúncias sobre cobranças indevidas por serviços que deveriam ser gratuitos.",
   },
 ];
 
