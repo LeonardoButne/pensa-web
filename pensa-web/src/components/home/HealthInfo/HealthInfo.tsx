@@ -33,12 +33,12 @@ const sections: HealthSection[] = [
   },
   {
     img: "/images-healthInfo/mae-e-bebe.png",
-    title: "Mãe e Bebé",
+    title: "Mãe e bebé",
     link: "/mae-e-bebe",
   },
   {
     img: "/images-healthInfo/centros-saude.png",
-    title: "Centros de Saúde",
+    title: "Unidades sanitárias",
     link: "/centros-de-saude",
   },
 ];

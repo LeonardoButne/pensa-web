@@ -53,7 +53,7 @@ const PROVINCES: Province[] = [
   { id: 4, name: "Inhambane" },
   { id: 5, name: "Manica" },
   { id: 6, name: "Sofala" },
-  // A lista completa seria muito longa, usamos os IDs presentes nos dados dos Centros de Saúde
+  // usamos os IDs presentes nos dados das unidades sanitárias
 ];
 
 // MOCK: Lista de Distritos (Baseado na primeira tabela que você forneceu - id/province_id/name)
@@ -216,14 +216,14 @@ export function HealthCenters() {
           <Center mb="xl">
             <Group>
               <Title order={2} fw={700} size={40} c="dark.7">
-                Centros de Saúde
+                Unidades sanitárias
               </Title>
             </Group>
           </Center>
 
           <Text ta="center" c="dimmed" mb="xl">
-            Encontre hospitais, centros de saúde e postos médicos em Moçambique
-            por província ou nome.
+            Encontre hospitais, unidades sanitárias e postos médicos em
+            Moçambique por província ou nome.
           </Text>
 
           <Divider mb="xl" />

@@ -9,7 +9,7 @@ interface HealthCenter {
 }
 
 // ===========================================
-// MOCK: Lista COMPLETA de Centros de Saúde (100 Itens)
+// MOCK: Lista COMPLETA de unidades sanitárias
 // ===========================================
 export const CENTERS: HealthCenter[] = [
   {
@@ -915,3 +915,4 @@ export const CENTERS: HealthCenter[] = [
     email: "hospitalcentraldabeira@yahoo.com",
   },
 ];
+

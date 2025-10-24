@@ -66,7 +66,7 @@ const contextItems = [
   {
     title: "Funcionalidades chave e impacto na saúde pública",
     content:
-      "A PENSA permite aos cidadãos registar problemas, consultar sintomas, precauções e informações para várias doenças (malária, HIV, TBC, etc.), e obter contactos de centros de saúde próximos. Toda a informação recolhida é visível num back-end website para uso dos funcionários da Saúde Pública.",
+      "A PENSA permite aos cidadãos registar problemas, consultar sintomas, precauções e informações para várias doenças (malária, HIV, TBC, etc.), e obter contactos de unidades sanitárias próximos. Toda a informação recolhida é visível num back-end website para uso dos funcionários da Saúde Pública.",
   },
 ];
 

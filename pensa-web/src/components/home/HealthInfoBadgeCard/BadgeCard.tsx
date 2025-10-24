@@ -37,7 +37,7 @@ const sections = [
   },
   {
     img: "/images-healthInfo/centros-saude.png",
-    title: "Centros de Saúde",
+    title: "Unidades sanitárias",
     items: [
       "Hospitais e Clínicas",
       "Localização por Província",

@@ -15,7 +15,7 @@ import { VaccinationCalendar } from "../pages/public/MotherAndBaby/VaccinationCa
 import { EssentialVaccines } from "../pages/public/MotherAndBaby/EssentialVaccines";
 import { BreastfeedingGuide } from "../pages/public/MotherAndBaby/BreastfeedingGuide";
 
-// Centros de Saúde
+// Unidades sanitárias
 import { HealthCenters } from "../pages/public/HealthCenters/HealthCenters";
 
 // Route Guards

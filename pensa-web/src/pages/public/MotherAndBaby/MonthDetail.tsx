@@ -61,7 +61,7 @@ const RAW_DATA = [
     mch_submenu_id: 3,
     info: "Parabens pelo nascimento do seu bebê! Durante o 1º mês deve fazer vacina de Polio 0 e de BCG...",
     long_info:
-      "Parabéns pelo nascimento do seu bebê!\nA chegada do seu bebê é um momento especial e cheio de novas descobertas. Para garantir a proteção da saúde do recém-nascido, é essencial seguir o calendário de vacinação desde os primeiros dias de vida.\n\nNo primeiro mês, seu bebê deve receber duas vacinas fundamentais: a Poliomielite Zero (Polio 0), que ajuda a prevenir a paralisia infantil, e a BCG, que protege contra formas graves de tuberculose. Ambas as vacinas são gratuitas e estão disponíveis nos centros de saúde.",
+      "Parabéns pelo nascimento do seu bebê!\nA chegada do seu bebê é um momento especial e cheio de novas descobertas. Para garantir a proteção da saúde do recém-nascido, é essencial seguir o calendário de vacinação desde os primeiros dias de vida.\n\nNo primeiro mês, seu bebê deve receber duas vacinas fundamentais: a Poliomielite Zero (Polio 0), que ajuda a prevenir a paralisia infantil, e a BCG, que protege contra formas graves de tuberculose. Ambas as vacinas são gratuitas e estão disponíveis nas unidades sanitárias.",
   },
 
   {
@@ -171,7 +171,7 @@ const RAW_DATA = [
     mch_submenu_id: 3,
     info: "6º mês: O bebe deve receber a 1a dose da vacina contra a malária...",
     long_info:
-      "6º Mês: O bebê deve receber a 1ª dose da vacina contra a malária. A vacina é gratuita nos centros de saúde.",
+      "6º Mês: O bebê deve receber a 1ª dose da vacina contra a malária. A vacina é gratuita nas unidades sanitárias.",
   },
 
   {
@@ -193,7 +193,7 @@ const RAW_DATA = [
     mch_submenu_id: 3,
     info: "7º mês: O bebe deve receber a 2a dose da vacina contra a malária...",
     long_info:
-      "7º Mês: O bebê deve receber a 2ª dose da vacina contra a malária. A vacina é gratuita nos centros de saúde. (Nota: Embora a informação de vacinação esteja listada, consulte o calendário oficial.)",
+      "7º Mês: O bebê deve receber a 2ª dose da vacina contra a malária. A vacina é gratuita nas unidades sanitárias. (Nota: Embora a informação de vacinação esteja listada, consulte o calendário oficial.)",
   },
 
   {
@@ -237,7 +237,7 @@ const RAW_DATA = [
     mch_submenu_id: 3,
     info: "9º mês do bebê deve fazer a 1a dose da vacina anti-Sarampo...",
     long_info:
-      "9º Mês: O bebê deve receber a 1ª dose da vacina anti-Sarampo (VAS) e a 3ª dose da vacina contra a malária. As vacinas são gratuitas nos centros de saúde.",
+      "9º Mês: O bebê deve receber a 1ª dose da vacina anti-Sarampo (VAS) e a 3ª dose da vacina contra a malária. As vacinas são gratuitas nas unidades sanitárias.",
   },
 
   // Meses pós-gravidez (Apenas Bebê e Vacina têm dados relevantes)

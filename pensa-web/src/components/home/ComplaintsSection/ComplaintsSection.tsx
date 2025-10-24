@@ -15,13 +15,13 @@ const sdgData = [
     title: "+112.080",
     iconSrc: "/images-complaints/medicamentos.png",
     description:
-      "Denuncias sobre falta de medicamentos e outros produtos essenciais nos centros de saúde.",
+      "Denuncias sobre falta de medicamentos e outros produtos essenciais nas unidades sanitárias.",
   },
   {
     id: 2,
     title: "+199.058",
     iconSrc: "/images-complaints/review.png",
-    description: "Denuncias sobre mau atendimento nos centros de saúde.",
+    description: "Denuncias sobre mau atendimento nas unidades sanitárias.",
   },
   {
     id: 3,

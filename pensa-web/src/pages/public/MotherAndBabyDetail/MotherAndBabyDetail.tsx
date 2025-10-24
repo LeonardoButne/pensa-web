@@ -209,7 +209,7 @@ const RAW_DATA = [
     mch_submenu_id: 3,
     info: "6º mês: O bebe deve receber a 1a dose da vacina contra a malária...",
     long_info:
-      "6º mês: O bebe deve receber a 1a dose da vacina contra a malária. A vacina é gratuita nos centros de saúde.",
+      "6º mês: O bebe deve receber a 1a dose da vacina contra a malária. A vacina é gratuita nas unidades sanitárias.",
   },
 
   {

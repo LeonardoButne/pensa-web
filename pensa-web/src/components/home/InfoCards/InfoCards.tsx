@@ -13,7 +13,7 @@ const cardsData = [
   {
     title: "Informação",
     description:
-      "O cidadão tem acesso a informações sobre diversas doenças, saúde materna e infantil, vacinas e contactos de centros de saúde, geridas pelo MISAU e atualizadas em tempo real.",
+      "O cidadão tem acesso a informações sobre diversas doenças, saúde materna e infantil, vacinas e contactos de unidades sanitárias, geridas pelo MISAU e atualizadas em tempo real.",
     color: "#0088CC",
   },
   {
