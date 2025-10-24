@@ -1,5 +1,5 @@
 // =========================================================
-// ARQUIVO: HealthCenters.tsx (NOVO)
+// ARQUIVO: HealthCenters.tsx (AJUSTADO com base no mock `id_of_type`)
 // =========================================================
 import { useState, useMemo, useEffect } from "react";
 import {
@@ -28,24 +28,30 @@ import {
 } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { useDebouncedValue } from "@mantine/hooks";
-import { CENTERS } from "./mockHealthCenters";
+import { CENTERS } from "./mockHealthCenters"; // Presume-se que o mock está aqui
 
 // ===========================================
 // 1. ESTRUTURAS DE DADOS
 // ===========================================
+
+// ... (Outras interfaces e Mocks: Province, Type, District, PROVINCES, TYPES, DISTRICTS) ...
 
 interface Province {
   id: number;
   name: string;
 }
 
-// interface District {
-//   id: number;
-//   province_id: number;
-//   name: string;
-// }
+interface Type {
+  id: number;
+  name: string;
+}
 
-// MOCK: Lista de Províncias (Apenas as principais para o filtro)
+interface District {
+  id: number;
+  province_id: number;
+  name: string;
+}
+
 const PROVINCES: Province[] = [
   { id: 1, name: "Maputo Cidade" },
   { id: 2, name: "Maputo Província" },
@@ -53,83 +59,21 @@ const PROVINCES: Province[] = [
   { id: 4, name: "Inhambane" },
   { id: 5, name: "Manica" },
   { id: 6, name: "Sofala" },
-  // usamos os IDs presentes nos dados das unidades sanitárias
 ];
 
-// MOCK: Lista de Distritos (Baseado na primeira tabela que você forneceu - id/province_id/name)
-// ===========================================
-// MOCK: Lista COMPLETA de Distritos
-// ===========================================
-// const DISTRICTS: District[] = [
-//   // Province ID 1 (Maputo Cidade)
-//   { id: 1, province_id: 1, name: "KaMpfumo" },
-//   { id: 2, province_id: 1, name: "Nlhamankulu" },
-//   { id: 3, province_id: 1, name: "KaMaxaquene" },
-//   { id: 4, province_id: 1, name: "KaMavota" },
-//   { id: 5, province_id: 1, name: "KaMubukwana" },
-//   { id: 6, province_id: 1, name: "KaTembe" },
-//   { id: 7, province_id: 1, name: "KaNyaka" },
+const TYPES: Type[] = [
+  { id: 1, name: "Unidades sanitárias" },
+  { id: 2, name: "Servico SAAJ" },
+  { id: 3, name: "Auto-Teste HIV" },
+  { id: 4, name: "Postos de Testagem" },
+  { id: 5, name: "Farmácias" },
+  { id: 6, name: "Postos de Vacinação" },
+];
 
-//   // Province ID 2 (Maputo Província)
-//   { id: 1, province_id: 2, name: "Boane" },
-//   { id: 2, province_id: 2, name: "Magude" },
-//   { id: 3, province_id: 2, name: "Manhiça" },
-//   { id: 4, province_id: 2, name: "Marracuene" },
-//   { id: 5, province_id: 2, name: "Matola" },
-//   { id: 6, province_id: 2, name: "Matutuíne" },
-//   { id: 7, province_id: 2, name: "Moamba" },
-//   { id: 8, province_id: 2, name: "Namaacha" },
+const DISTRICTS: District[] = [
+  // ... (Lista completa de distritos) ...
+];
 
-//   // Province ID 3 (Gaza)
-//   { id: 1, province_id: 3, name: "Bilene Macia" },
-//   { id: 2, province_id: 3, name: "Chibuto" },
-//   { id: 3, province_id: 3, name: "Chicualacuala" },
-//   { id: 4, province_id: 3, name: "Chigubo" },
-//   { id: 5, province_id: 3, name: "Chókwè" },
-//   { id: 6, province_id: 3, name: "Chongoene" },
-//   { id: 7, province_id: 3, name: "Guijá" },
-//   { id: 8, province_id: 3, name: "Limpopo" }, // Usando o Limpopo (8-2)
-//   { id: 9, province_id: 3, name: "Mabalane" },
-//   { id: 10, province_id: 3, name: "Manjacaze" },
-
-//   // Province ID 4 (Inhambane)
-//   { id: 1, province_id: 4, name: "Funhalouro" },
-//   { id: 2, province_id: 4, name: "Govuro" },
-//   { id: 3, province_id: 4, name: "Homoíne" },
-//   { id: 4, province_id: 4, name: "Inhambane" },
-//   { id: 5, province_id: 4, name: "Inharrime" },
-//   { id: 6, province_id: 4, name: "Inhassoro" },
-//   { id: 7, province_id: 4, name: "Jangamo" },
-//   { id: 8, province_id: 4, name: "Mabote" },
-//   { id: 9, province_id: 4, name: "Massinga" },
-//   { id: 10, province_id: 4, name: "Maxixe" },
-
-//   // Province ID 5 (Manica)
-//   { id: 1, province_id: 5, name: "Bárue" },
-//   { id: 2, province_id: 5, name: "Chimoio" },
-//   { id: 3, province_id: 5, name: "Gondola" },
-//   { id: 4, province_id: 5, name: "Guro" },
-//   { id: 5, province_id: 5, name: "Macate" },
-//   { id: 6, province_id: 5, name: "Machaze" },
-//   { id: 7, province_id: 5, name: "Macossa" },
-//   { id: 8, province_id: 5, name: "Manica" },
-//   { id: 9, province_id: 5, name: "Mossurize" },
-//   { id: 10, province_id: 5, name: "Sussundenga" },
-
-//   // Province ID 6 (Sofala)
-//   { id: 1, province_id: 6, name: "Beira" },
-//   { id: 2, province_id: 6, name: "Búzi" },
-//   { id: 3, province_id: 6, name: "Caia" },
-//   { id: 4, province_id: 6, name: "Chemba" },
-//   { id: 5, province_id: 6, name: "Cheringoma" },
-//   { id: 6, province_id: 6, name: "Chibabava" },
-//   { id: 7, province_id: 6, name: "Dôa" },
-//   { id: 8, province_id: 6, name: "Gorongosa" },
-//   { id: 9, province_id: 6, name: "Machanga" },
-//   { id: 10, province_id: 6, name: "Maringué" },
-// ];
-
-// VARIÁVEL DE CONFIGURAÇÃO DA PAGINAÇÃO
 const ITEMS_PER_PAGE = 12;
 
 export function HealthCenters() {
@@ -137,6 +81,9 @@ export function HealthCenters() {
   const [selectedProvinceId, setSelectedProvinceId] = useState<string | null>(
     null
   );
+  // 🟢 NOVO ESTADO: Para o filtro de Tipo
+  const [selectedTypeId, setSelectedTypeId] = useState<string | null>(null);
+
   const [debouncedSearch] = useDebouncedValue(search, 300);
 
   // 1. ESTADO DA PAGINAÇÃO
@@ -148,8 +95,12 @@ export function HealthCenters() {
     label: p.name,
   }));
 
+  const typeOptions = TYPES.map((t) => ({
+    value: String(t.id),
+    label: t.name,
+  }));
+
   // 2. Lógica de Filtragem e Paginação
-  // AQUI É ONDE ESTÁ A CORREÇÃO PRINCIPAL: activePage é uma dependência direta.
   const { paginatedCenters, totalPages } = useMemo(() => {
     let list = CENTERS;
 
@@ -158,7 +109,12 @@ export function HealthCenters() {
       list = list.filter((c) => String(c.province_id) === selectedProvinceId);
     }
 
-    // 2.2. FILTRO DE PESQUISA
+    // 🟢 AJUSTADO: 2.2. FILTRO DE TIPO - USANDO c.id_of_type
+    if (selectedTypeId) {
+      list = list.filter((c) => String(c.id_of_type) === selectedTypeId); // 👈 CORREÇÃO PRINCIPAL
+    }
+
+    // 2.3. FILTRO DE PESQUISA
     if (debouncedSearch) {
       const lowerSearch = debouncedSearch.toLowerCase();
       list = list.filter(
@@ -168,11 +124,11 @@ export function HealthCenters() {
       );
     }
 
-    // 2.3. CÁLCULO DA PAGINAÇÃO
+    // 2.4. CÁLCULO DA PAGINAÇÃO
     const totalCount = list.length;
     const calculatedTotalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
 
-    // 2.4. APLICAR PAGINAÇÃO
+    // 2.5. APLICAR PAGINAÇÃO
     const start = (activePage - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
     const paginatedCenters = list.slice(start, end);
@@ -181,24 +137,22 @@ export function HealthCenters() {
       paginatedCenters,
       totalPages: calculatedTotalPages,
       totalCount,
-      filteredListLength: totalCount, // Manter o nome para contagem
+      filteredListLength: totalCount,
     };
-  }, [selectedProvinceId, debouncedSearch, activePage]); // 🚨 activePage AQUI FAZ O RE-CALCULO
+  }, [selectedProvinceId, selectedTypeId, debouncedSearch, activePage]); // 🚨 selectedTypeId adicionado
 
   // 3. EFEITO PARA RESETAR A PÁGINA QUANDO OS FILTROS MUDAM
-  // Este useEffect garante que a página volta para 1 se os filtros (província ou pesquisa) mudarem.
   useEffect(() => {
-    // Verificamos se a lista filtrada tem itens para evitar resetar se não houver nada
     if (activePage !== 1) {
       setPage(1);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedProvinceId, debouncedSearch]); // Não incluir activePage aqui!
+  }, [selectedProvinceId, selectedTypeId, debouncedSearch]); // 🚨 selectedTypeId adicionado
 
   return (
     <Box py={40} bg="gray.0">
       <Container size="xl">
-        {/* Botão de voltar */}
+        {/* Botão de voltar (Inalterado) */}
         <Button
           component={Link}
           to="/"
@@ -212,7 +166,7 @@ export function HealthCenters() {
         </Button>
 
         <Paper shadow="lg" radius="lg" p="xl" withBorder>
-          {/* Título e Descrição */}
+          {/* Título e Descrição (Inalterado) */}
           <Center mb="xl">
             <Group>
               <Title order={2} fw={700} size={40} c="dark.7">
@@ -223,13 +177,14 @@ export function HealthCenters() {
 
           <Text ta="center" c="dimmed" mb="xl">
             Encontre hospitais, unidades sanitárias e postos médicos em
-            Moçambique por província ou nome.
+            Moçambique por província, tipo ou nome.
           </Text>
 
           <Divider mb="xl" />
 
           {/* Filtros */}
           <Group mb="xl" grow>
+            {/* Filtro de Província (Inalterado) */}
             <Select
               placeholder="Filtrar por Província"
               data={provinceOptions}
@@ -238,6 +193,7 @@ export function HealthCenters() {
               onChange={setSelectedProvinceId}
               clearable
             />
+            {/* Filtro de Pesquisa (Inalterado) */}
             <TextInput
               placeholder="Pesquisar por nome ou endereço do centro..."
               leftSection={<IconSearch size={16} />}
@@ -245,13 +201,18 @@ export function HealthCenters() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
+            {/* 🟢 CORRIGIDO: Filtro de Tipo */}
+            <Select
+              placeholder="Filtrar por tipo"
+              data={typeOptions}
+              size="md"
+              value={selectedTypeId} // 👈 Usa o novo estado
+              onChange={setSelectedTypeId} // 👈 Atualiza o novo estado
+              clearable
+            />
           </Group>
 
           {/* Resultados */}
-          {/* <Text size="lg" fw={500} mb="md">
-            {totalCount} Centros encontrados:
-          </Text> */}
-
           {paginatedCenters.length > 0 ? (
             <>
               {/* Grid de Cards */}
@@ -260,6 +221,8 @@ export function HealthCenters() {
                   const provinceName =
                     PROVINCES.find((p) => p.id === center.province_id)?.name ||
                     "Desconhecida";
+                  // 🟢 AJUSTADO: Pega o nome do tipo diretamente do mock (center.type)
+                  const typeName = center.type;
 
                   return (
                     <Card
@@ -273,11 +236,15 @@ export function HealthCenters() {
                         <Title order={4} fw={700} lineClamp={2} c="blue.7">
                           {center.name}
                         </Title>
-                        <Badge color="cyan" variant="filled" size="md">
-                          {provinceName}
+                        {/* Exibir o tipo no Badge, usando o campo 'type' do mock */}
+                        <Badge color="blue" variant="light" size="md">
+                          {typeName}
                         </Badge>
                       </Group>
-
+                      <Badge color="cyan" variant="filled" size="sm" mb="xs">
+                        {provinceName}
+                      </Badge>
+                      {/* ... (Restante do Card Inalterado) ... */}
                       <Text size="sm" c="dimmed" lineClamp={2} mb="sm">
                         <IconMapPin
                           size={14}
@@ -288,19 +255,18 @@ export function HealthCenters() {
                         />
                         {center.address || "Endereço não disponível"}
                       </Text>
-
                       <Divider my="sm" />
-
-                      <Group gap="xs" mb="xs">
-                        <IconPhone
-                          size={16}
-                          color="var(--mantine-color-gray-6)"
-                        />
-                        <Text size="sm" fw={500}>
-                          Telefone: {center.telephone || "N/A"}
-                        </Text>
-                      </Group>
-
+                      {center.telephone && String(center.telephone).trim() && (
+                        <Group gap="xs" mb="xs">
+                          <IconPhone
+                            size={16}
+                            color="var(--mantine-color-gray-6)"
+                          />
+                          <Text size="sm" fw={500}>
+                            Telefone: {center.telephone}
+                          </Text>
+                        </Group>
+                      )}
                       {center.email && (
                         <Group gap="xs">
                           <IconMail
@@ -317,19 +283,18 @@ export function HealthCenters() {
                 })}
               </SimpleGrid>
 
-              {/* Componente de Paginação */}
+              {/* Componente de Paginação (Inalterado) */}
               {totalPages > 1 && (
                 <Center mt="xl">
                   <Pagination
                     value={activePage}
-                    onChange={setPage} // 👈 A alteração da página atualiza o estado
+                    onChange={setPage}
                     total={totalPages}
                     size="md"
                     siblings={1}
-                    // Role para o topo da Container para que o utilizador veja a nova lista
                     onClick={() =>
                       window.scrollTo({
-                        top: 200, // Ajuste este valor conforme necessário para subir até aos cards
+                        top: 200,
                         behavior: "smooth",
                       })
                     }
