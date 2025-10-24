@@ -2,6 +2,7 @@ import { ComplaintSection } from "../../../components/home/ComplaintsSection/Com
 import { FaqSimple } from "../../../components/home/FAQSection/FaqSimple";
 import { HealthInfo } from "../../../components/home/HealthInfo/HealthInfo";
 import { Hero } from "../../../components/home/Hero/Hero";
+import { ImpactSection } from "../../../components/home/ImpactSection/ImpactSection";
 import { InfoCards } from "../../../components/home/InfoCards/InfoCards";
 import { MentalHealth } from "../../../components/home/MentalHealth/MentalHealth";
 import { NewsSection } from "../../../components/home/NewsSection/NewsSection";
@@ -14,6 +15,7 @@ export function Home() {
       <Hero />
       <PartnersSection />
       <InfoCards />
+      <ImpactSection />
       <SdgSection />
       <ComplaintSection />
       <HealthInfo />
