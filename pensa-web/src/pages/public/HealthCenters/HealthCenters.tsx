@@ -40,11 +40,6 @@ interface Type {
   id: number;
   name: string;
 }
-interface District {
-  id: number;
-  province_id: number;
-  name: string;
-}
 
 const PROVINCES: Province[] = [
   { id: 1, name: "Maputo Cidade" },
