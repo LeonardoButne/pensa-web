@@ -1,65 +1,34 @@
-.footer {
-  background-color: #2c2c2c; /* fundo escuro elegante */
-  color: #ffffff; /* texto claro para contraste */
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+/* Footer.module.css (Limpado e Otimizado) */
 
 .footer {
+  /* Mantendo o estilo escuro elegante e as margens/bordas Mantine-style */
   margin-top: calc(var(--mantine-spacing-xl) * 2);
   padding-top: var(--mantine-spacing-xl);
   background-color: var(--mantine-color-dark-8);
   border-top: 1px solid var(--mantine-color-dark-5);
-  color: var(
-    --mantine-color-white
-  ); /* Garante que o texto seja legível no fundo escuro */
+  color: var(--mantine-color-white);
 }
 
 /* ---------------------------------------------------- */
 /* Conteúdo Principal (Logo + Contactos + Endereço) */
+/* (Horizontal em PC/Tablet, Vertical em Celular) */
 /* ---------------------------------------------------- */
 
 .inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Espaço entre o logo e os grupos de links */
   padding-top: var(--mantine-spacing-xl);
   padding-bottom: var(--mantine-spacing-xl);
-  /* A borda inferior será movida para afterFooter */
-}
-
-/* Empilhamento no celular (Tamanho SM ou menor) */
-@media (max-width: var(--mantine-breakpoint-sm)) {
-  .inner {
-    flex-direction: column;
-    /* Espaçamento entre os elementos (Logo, Contactos, Endereço) */
-    gap: var(--mantine-spacing-xl);
-    text-align: center; /* Centraliza o texto no celular */
-  }
-
-  .logo {
-    /* Centraliza o logo no celular */
-    align-self: center;
-  }
 }
 
 /* Os grupos de links (Contactos e Endereço) */
 .groups {
   display: flex;
-  /* Espaçamento entre os grupos (ex: Contactos e Endereço) */
+  /* Espaçamento generoso entre os grupos de links (Contactos e Endereço) no desktop/tablet */
   gap: calc(var(--mantine-spacing-xl) * 4);
 }
 
-/* Empilhamento dos grupos de links no celular */
-@media (max-width: var(--mantine-breakpoint-sm)) {
-  .groups {
-    flex-direction: column;
-    width: 100%;
-    /* Centraliza o texto dos grupos no celular */
-    align-items: center;
-    gap: var(--mantine-spacing-xl);
-  }
-}
-
+/* Estilo dos links */
 .link {
   display: block;
   margin-bottom: var(--mantine-spacing-xs);
@@ -80,11 +49,12 @@
 
 /* ---------------------------------------------------- */
 /* Pós-Rodapé (Copyright e Ícones Sociais) */
+/* (Horizontal em PC/Tablet, Vertical em Celular) */
 /* ---------------------------------------------------- */
 
 .afterFooter {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Espaço entre o copyright e os sociais */
   align-items: center;
   padding-top: var(--mantine-spacing-md);
   padding-bottom: var(--mantine-spacing-md);
@@ -99,16 +69,41 @@
   color: var(--mantine-color-blue-4);
 }
 
-/* Empilhamento do pós-rodapé no celular */
+/* ==================================================== */
+/* 📱 BREAKPOINT MOBILE (Tamanho SM ou menor) */
+/* ==================================================== */
+
 @media (max-width: var(--mantine-breakpoint-sm)) {
+  /* 1. Conteúdo Principal (Logo + Links) */
+  .inner {
+    flex-direction: column;
+    gap: var(--mantine-spacing-xl);
+    /* Centraliza o texto (Logo será centralizado por .logo) */
+    text-align: center;
+  }
+
+  .logo {
+    /* Centraliza o bloco do logo */
+    align-self: center;
+  }
+
+  /* 2. Grupos de Links (Contactos e Endereço) */
+  .groups {
+    flex-direction: column;
+    width: 100%;
+    /* Centraliza os títulos e links dos grupos no celular */
+    align-items: center;
+    gap: var(--mantine-spacing-xl);
+  }
+
+  /* 3. Pós-Rodapé (Copyright e Sociais) */
   .afterFooter {
-    /* Empilha o copyright e os sociais */
     flex-direction: column;
     gap: var(--mantine-spacing-md);
   }
 
-  .social {
-    /* Garante que os ícones sociais fiquem no centro do rodapé */
-    margin-bottom: 0 !important;
+  /* Garante que o texto do copyright seja centralizado */
+  .afterFooter > :first-child {
+    text-align: center;
   }
 }

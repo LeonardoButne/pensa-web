@@ -1,3 +1,5 @@
+/* MentalHealth.module.css */
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -6,25 +8,31 @@
 }
 
 .content {
-  max-width: 500px;
+  /* Não precisamos de max-width aqui, o grid já limita o espaço */
+  /* max-width: 500px; */
 }
 
-.iconWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 300px;
-  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+/* 🟢 CORREÇÃO CRÍTICA: Contêiner do Vídeo (Paper) */
+.videoWrapper {
+  /* Garante que o contêiner do vídeo se estique para a largura total da coluna */
+  width: 100%;
+  /* 🟢 NOVO: Usa aspect-ratio para garantir que seja um quadrado responsivo */
+  aspect-ratio: 1 / 1;
 }
 
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Garante que o elemento do vídeo preencha o Paper */
+.videoElement {
+  display: block; /* Remove possíveis espaços em branco abaixo do vídeo */
+  object-fit: cover; /* Garante que o vídeo preencha a área, mas pode cortar as laterais */
 }
+
+/* ------------------------------------------------ */
+/* Responsive (max-width: 768px) */
+/* ------------------------------------------------ */
 
 @media (max-width: 768px) {
   .wrapper {
+    /* Empilha o conteúdo e o vídeo no celular */
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -34,7 +42,20 @@
     text-align: center;
   }
 
-  .iconWrapper {
-    min-height: 250px;
+  /* 🟢 Ajuste a altura do vídeo no mobile para não ser excessiva */
+  .videoWrapper {
+    /* Permite que o Paper se estique */
+    max-width: 100%;
+    /* Mantém a proporção, mas pode-se reduzir a proporção no mobile se necessário */
+    /* Ex: aspect-ratio: 16 / 9; para vídeo mais retangular */
+    aspect-ratio: 1 / 1;
+    /* Centraliza o vídeo quando a largura for menor que 100% (opcional) */
+    margin: 0 auto;
   }
 }
+
+/* Classes não utilizadas no código atual removidas para limpeza */
+/*
+.iconWrapper { ... }
+.icon { ... }
+*/

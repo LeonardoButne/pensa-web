@@ -35,7 +35,7 @@ const data = [
         label: "Av. Ahmed Sekou Touré",
         href: "https://maps.app.goo.gl/EHvDJv5txzrLYKMA7",
       },
-      { label: "Maputo, Moçambique", href: "#" },
+      { label: "Maputo, Moçambique" },
     ],
   },
 ];
