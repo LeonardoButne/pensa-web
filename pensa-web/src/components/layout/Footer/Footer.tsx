@@ -19,18 +19,22 @@ const data = [
   {
     title: "Contactos",
     links: [
-      { label: "Tel: 260 | 84x | 86x | 82x | 85x", href: "tel:260" },
+      // Corrigindo o valor do 'href' para o telefone e e-mail
+      { label: "Tel: +258 | 84x | 86x | 82x | 85x", href: "tel:+258" },
       {
         label: "E-mail: info@sourcecode.solutions",
-        href: "info@sourcecode.solutions",
+        href: "mailto:info@sourcecode.solutions",
       },
     ],
   },
   {
     title: "Endereço",
     links: [
-      // { label: "Praça Samora M. Machel, 217", href: "#" },
-      { label: "Av. Ahmed Sekou Touré", href: "#" },
+      { label: "Polana cimento" },
+      {
+        label: "Av. Ahmed Sekou Touré",
+        href: "https://maps.app.goo.gl/EHvDJv5txzrLYKMA7",
+      },
       { label: "Maputo, Moçambique", href: "#" },
     ],
   },
@@ -40,7 +44,7 @@ export function Footer() {
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
       <Anchor
-        key={index}
+        key={index} // Usar index aqui é aceitável, pois a ordem dos links é estática
         c="dimmed"
         href={link.href}
         size="sm"
@@ -60,6 +64,7 @@ export function Footer() {
 
   return (
     <footer className={classes.footer}>
+      {/* Container Principal: Logo e Links. O layout horizontal/vertical é definido no CSS */}
       <Container size="xl" className={classes.inner}>
         <div className={classes.logo}>
           <Group gap="xs" mb="md">
@@ -70,12 +75,14 @@ export function Footer() {
         <div className={classes.groups}>{groups}</div>
       </Container>
 
+      {/* Container Pós-Rodapé: Copyright e Sociais. O layout horizontal/vertical é definido no CSS */}
       <Container size="xl" className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
           © {new Date().getFullYear()} SourceCode. Todos os direitos reservados.
         </Text>
 
-        <Group gap="xl" className={classes.social} mb={10} justify="center">
+        {/* ActionIcons ajustados para usar size="lg" e remover mb={10} */}
+        <Group gap="xl" className={classes.social} justify="center">
           <ActionIcon
             size="lg"
             color="white"
@@ -84,7 +91,7 @@ export function Footer() {
             href="https://tiktok.com/@pensa660"
             target="_blank"
           >
-            <IconBrandTiktok size={200} stroke={1.5} />
+            <IconBrandTiktok size={24} stroke={1.5} />
           </ActionIcon>
           <ActionIcon
             size="lg"
@@ -94,7 +101,7 @@ export function Footer() {
             href="https://youtube.com"
             target="_blank"
           >
-            <IconBrandYoutube size={200} stroke={1.5} />
+            <IconBrandYoutube size={24} stroke={1.5} />
           </ActionIcon>
           <ActionIcon
             size="lg"
@@ -104,7 +111,7 @@ export function Footer() {
             href="https://instagram.com/pensa.660"
             target="_blank"
           >
-            <IconBrandInstagram size={200} stroke={1.5} />
+            <IconBrandInstagram size={24} stroke={1.5} />
           </ActionIcon>
           <ActionIcon
             size="lg"
@@ -114,7 +121,7 @@ export function Footer() {
             href="https://www.facebook.com/pensa660?_rdc=1&_rdr"
             target="_blank"
           >
-            <IconBrandFacebook size={200} stroke={1.5} />
+            <IconBrandFacebook size={24} stroke={1.5} />
           </ActionIcon>
         </Group>
       </Container>
