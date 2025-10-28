@@ -28,7 +28,7 @@ export function Header() {
   return (
     <Box component="header" className={classes.header}>
       <Container size="xl">
-        <Group justify="space-between" h={70}>
+        <Group justify="space-between" h="70px">
           {/* Logo */}
           <Link to="/" className={classes.logo}>
             <Group gap="xs">

@@ -44,8 +44,8 @@ export function FaqSimple() {
   ));
 
   return (
-    <Container size="sm" className={classes.wrapper}>
-      <Title size={25} mb={20} ta="center" className={classes.title}>
+    <Container size="sm"  className={classes.wrapper}>
+      <Title size={25} mb={10} ta="center" className={classes.title}>
         Perguntas frequentes sobre a PENSA
       </Title>
 
