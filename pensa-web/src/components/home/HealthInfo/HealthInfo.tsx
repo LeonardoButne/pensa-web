@@ -57,7 +57,7 @@ export function HealthInfo() {
           mb={{ base: rem(30), md: rem(40) }}
           fw={700}
         >
-          Informação sobre Saúde
+          Informação sobre saúde
         </Title>
 
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="xl">

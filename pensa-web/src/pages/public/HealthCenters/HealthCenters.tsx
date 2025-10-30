@@ -48,6 +48,11 @@ const PROVINCES: Province[] = [
   { id: 4, name: "Inhambane" },
   { id: 5, name: "Manica" },
   { id: 6, name: "Sofala" },
+  { id: 7, name: "Tete" },
+  { id: 8, name: "Zambézia" },
+  { id: 9, name: "Nampula" },
+  { id: 10, name: "Cabo Delgado" },
+  { id: 11, name: "Niassa" },
 ];
 
 const TYPES: Type[] = [
@@ -226,7 +231,6 @@ export function HealthCenters() {
               }
             />
 
-            {/* Filtro de Tipo */}
             <Select
               placeholder="Filtrar por tipo"
               data={typeOptions}
@@ -236,7 +240,6 @@ export function HealthCenters() {
               clearable
             />
 
-            {/* Filtro de Pesquisa */}
             <TextInput
               placeholder="Pesquisar por nome ou endereço..."
               leftSection={<IconSearch size={16} />}
@@ -256,7 +259,6 @@ export function HealthCenters() {
                     "Desconhecida";
                   const typeName = center.type;
 
-                  // 💡 INÍCIO DO CONTEÚDO DO CARD OMITIDO 💡
                   return (
                     <Card
                       key={center.id}
@@ -293,7 +295,6 @@ export function HealthCenters() {
 
                       <Divider my="sm" />
 
-                      {/* 🟢 TELEFONE CONDICIONAL */}
                       {center.telephone &&
                         String(center.telephone).trim() !== "" && (
                           <Group gap="xs" mb="xs">
@@ -307,7 +308,6 @@ export function HealthCenters() {
                           </Group>
                         )}
 
-                      {/* 🟢 EMAIL CONDICIONAL (Usando verificação robusta) */}
                       {center.email && center.email.trim() !== "" && (
                         <Group gap="xs">
                           <IconMail
@@ -323,7 +323,6 @@ export function HealthCenters() {
                   );
                 })}
               </SimpleGrid>
-              {/* 💡 FIM DO CONTEÚDO DO CARD OMITIDO 💡 */}
 
               {/* Componente de Paginação */}
               {totalPages > 1 && (

@@ -22,11 +22,11 @@ interface PartnerLogo {
 const partners: PartnerLogo[] = [
   { id: 1, alt: "Logo MISAU", src: "/images-parceiros/minisaude.png" },
   { id: 2, alt: "Logo CCP", src: "/images-parceiros/ccp-logo.jpg" },
-  { id: 3, alt: "Logo Movitel", src: "/images-parceiros/Movitel.png" },
-  { id: 4, alt: "Logo TMCEL", src: "/images-parceiros/TMCEL.png" },
+  { id: 3, alt: "Logo Csaude", src: "/images-parceiros/Csaude.png" },
+  { id: 4, alt: "Logo FGH", src: "/images-parceiros/FGH.png" },
   { id: 5, alt: "Logo USAID", src: "/images-parceiros/USAID.jpg" },
-  { id: 6, alt: "Logo Vodacom", src: "/images-parceiros/VODACOM.png" },
-  { id: 7, alt: "Logo RADIO", src: "/images-parceiros/radio.png" },
+  { id: 6, alt: "Logo UNICEF", src: "/images-parceiros/UNICEF.png" },
+  { id: 7, alt: "Logo Johns", src: "/images-parceiros/johns.png" },
   { id: 8, alt: "Logo fni", src: "/images-parceiros/fni.jpg" },
 ];
 

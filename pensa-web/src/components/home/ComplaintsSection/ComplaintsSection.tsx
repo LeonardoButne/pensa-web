@@ -41,11 +41,11 @@ export function ComplaintSection() {
       p={rem(20)}
     >
       <Container size="lg">
-        <Title order={3} ta="center" mb={rem(40)}>
+        <Title order={3} ta="center" mb={rem(40)} c="white">
           Canal de Queixas e Reclamações
         </Title>
 
-        <Text ta="center" mb={rem(40)}>
+        <Text ta="center" mb={rem(40)} c="white">
           Ajude-nos a deixar o sistema de saúde melhor para todos, enviando as
           suas queixas ou reclamações, através de *660# depois selecionando a
           opção 6 - Queixas ou pelo WhatsApp através do número +258 84 300 0660.
@@ -75,7 +75,7 @@ export function ComplaintSection() {
 
                 <Title order={2}>{`${sdg.title}`}</Title>
 
-                <Text size="sm" c="dimmed">
+                <Text size="sm" c="gray.7" mt={rem(10)}>
                   {sdg.description}
                 </Text>
               </Card>

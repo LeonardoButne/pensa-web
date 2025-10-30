@@ -7,16 +7,10 @@
   align-items: center;
 }
 
-.content {
-  /* Não precisamos de max-width aqui, o grid já limita o espaço */
-  /* max-width: 500px; */
-}
-
 /* 🟢 CORREÇÃO CRÍTICA: Contêiner do Vídeo (Paper) */
 .videoWrapper {
   /* Garante que o contêiner do vídeo se estique para a largura total da coluna */
-  width: 100%;
-  /* 🟢 NOVO: Usa aspect-ratio para garantir que seja um quadrado responsivo */
+  width: 90%;
   aspect-ratio: 1 / 1;
 }
 
@@ -59,3 +53,4 @@
 .iconWrapper { ... }
 .icon { ... }
 */
+

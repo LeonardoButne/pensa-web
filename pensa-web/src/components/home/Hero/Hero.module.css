@@ -2,7 +2,6 @@
   background: linear-gradient(135deg, #b8e5e5 0%, #c8e8e8 100%);
   position: relative;
   overflow: hidden;
-  /* 🟢 AJUSTE: Padding vertical reduzido */
   padding: 0 0;
   min-height: 550px;
   height: 100vh - 70px;
@@ -34,15 +33,12 @@
   line-height: 1.6;
 }
 
-/* 🟢 AJUSTE CRÍTICO: Contêiner da Imagem/Carousel (Desktop) */
 @media (min-width: 769px) {
   .image {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* 🟢 AJUSTE: Altura reduzida para 500px */
-    height: 500px;
     max-width: 50%;
   }
 }
@@ -104,7 +100,7 @@
   .inner {
     flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 10px;
   }
 
   .content {
@@ -118,8 +114,6 @@
   .image {
     max-width: 400px;
     width: 100%;
-    /* 🟢 AJUSTE: Altura reduzida para 400px */
-    height: 400px;
     align-items: center;
     margin: 0 auto;
   }

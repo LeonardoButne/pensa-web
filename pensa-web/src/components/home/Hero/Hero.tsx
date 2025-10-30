@@ -33,14 +33,13 @@ const SLIDER_IMAGES = [
 // 2. DADOS DOS PARCEIROS
 // ===============================================
 const PARTNERS_LOGOS = [
-  "images-parceiros/ccp-logo.jpg",
-  "images-parceiros/fni.jpg",
-  "images-parceiros/minisaude.png",
-  "images-parceiros/Movitel.png",
-  "images-parceiros/radio.png",
-  "images-parceiros/TMCEL.png",
-  "images-parceiros/USAID.jpg",
-  "images-parceiros/VODACOM.png",
+  "/images-parceiros/minisaude.png",
+  "/images-parceiros/Csaude.png",
+  "/images-parceiros/FGH.png",
+  "/images-parceiros/USAID.jpg",
+  "/images-parceiros/UNICEF.png",
+  "/images-parceiros/Johns.png",
+  "/images-parceiros/fni.jpg",
 ];
 
 export function Hero() {
@@ -61,7 +60,7 @@ export function Hero() {
   };
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/258878727900", "_blank");
+    window.open("https://wa.me/258820000660", "_blank");
   };
 
   // Mapeia as imagens para slides do Carousel
@@ -126,7 +125,6 @@ export function Hero() {
               slidesToScroll={1}
               dragFree
               controlsOffset="sm"
-              // 🟢 Usa o plugin de Autoplay
               plugins={[autoplayRef.current]}
             >
               {slides}
@@ -134,7 +132,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* 🟢 NOVO BLOCO: Logos dos Parceiros (Faixa Discreta) */}
         <div className={classes.partnersSection}>
           <Text
             size="sm"
@@ -148,8 +145,8 @@ export function Hero() {
 
           <SimpleGrid
             // Colunas: 3 (mobile), 5 (tablet), 9 (desktop)
-            cols={{ base: 3, sm: 5, md: 8 }}
-            spacing={{ base: "xl", md: "xl" }}
+            cols={{ base: 3, sm: 5, md: 7 }}
+            spacing={{ base: "xl", md: "xl", sm: "sm" }}
             // className={classes.partnersGrid}
           >
             {PARTNERS_LOGOS.map((src, index) => (

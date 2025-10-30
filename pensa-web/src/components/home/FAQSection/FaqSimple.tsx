@@ -5,19 +5,19 @@ import classes from "./FaqSimple.module.css";
 const FAQ_DATA = [
   {
     value: "cadastro-pensa",
-    question: "Como posso me cadastrar na plataforma Pensa?",
+    question: "Como posso me cadastrar na PENSA?",
     answer:
       "O cadastro é simples e rápido. Basta ligar *660#, selecionar opcao 4 e seguir as instruções.",
   },
   {
     value: "custo-pensa",
-    question: "Existe algum custo para utilizar a Pensa?",
+    question: "Existe algum custo para utilizar a PENSA?",
     answer:
-      "A Pensa é totalmente gratuito e funciona sem nenhuma ligação a internet.",
+      "A PENSA é totalmente gratuito e funciona sem nenhuma ligação a internet.",
   },
   {
     value: "seguranca-dados",
-    question: "Meus dados e informações estão seguros na Pensa?",
+    question: "Meus dados e informações estão seguros na PENSA?",
     answer:
       "Sim, a segurança é nossa prioridade. Utilizamos criptografia de ponta a ponta e seguimos as melhores práticas de proteção de dados. Seus dados são armazenados em servidores seguros, em conformidade com as normas internacionais de privacidade.",
   },
@@ -44,7 +44,7 @@ export function FaqSimple() {
   ));
 
   return (
-    <Container size="sm"  className={classes.wrapper}>
+    <Container size="sm" className={classes.wrapper}>
       <Title size={25} mb={10} ta="center" className={classes.title}>
         Perguntas frequentes sobre a PENSA
       </Title>

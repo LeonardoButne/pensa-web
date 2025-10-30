@@ -34,7 +34,6 @@ export function MentalHealth() {
             shadow="xl" // Sombra mais proeminente
             radius="lg"
             p={0}
-            // 🔴 CORREÇÃO CRÍTICA: Removido os tamanhos fixos. O CSS fará o controle.
             style={{ overflow: "hidden" }}
           >
             <video
@@ -56,3 +55,4 @@ export function MentalHealth() {
     </Box>
   );
 }
+

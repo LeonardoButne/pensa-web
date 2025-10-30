@@ -10,9 +10,9 @@ interface ImpactItem {
 
 const IMPACT_DATA: ImpactItem[] = [
   {
-    value: "+652K",
-    label: "Usuários cadastrados",
-    description: "Pessoas que se cadastraram no sistema",
+    value: "+5.33M",
+    label: "Utilizadores",
+    description: "Pessoas que utilizam o sistema",
     color: "cyan.6",
   },
   {
