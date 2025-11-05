@@ -68,18 +68,21 @@ export function Header() {
       <Drawer
         opened={opened}
         onClose={close}
-        size="100%"
-        padding="md"
+        size="75%"
+        position="right"
         title={
           <Group gap="xs">
-            <Image src="/logo.svg" alt="PENSA" h={32} w="auto" />
-            <Text fw={700} size="lg" c="cyan.6">
+            <Image src="/images-header/logo.png"
+              alt="PENSA Logo"
+              h={62}
+              w="auto"
+            />
+            <Text fw={700} size="lg">
               PENSA
             </Text>
           </Group>
         }
         hiddenFrom="md"
-        zIndex={1000000}
       >
         <Stack gap="md" pt="xl">
           {links.map((item) => (
