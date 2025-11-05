@@ -18,6 +18,7 @@ import { BreastfeedingGuide } from "../pages/public/MotherAndBaby/BreastfeedingG
 // Unidades sanitárias
 import { HealthCenters } from "../pages/public/HealthCenters/HealthCenters";
 import { Emergencies } from "../pages/public/Emergencies/Emergencies";
+import { EmergencyDetail } from "../pages/public/EmergencyDetail/EmergencyDetail";
 
 // Route Guards
 
@@ -32,6 +33,7 @@ export function AppRoutes() {
         <Route path="/doencas/:id" element={<DiseaseDetail />} />
         <Route path="/centros-de-saude" element={<HealthCenters />} />
         <Route path="/primeiros-socoros" element={<Emergencies />} />
+        <Route path="/primeiros-socoros/:id" element={<EmergencyDetail />} />
         {/* Rotas da área Mãe e Bebê */}
         \ <Route path="/mae-e-bebe" element={<MotherAndBaby />} />
         <Route path="/mae-bebe/fases-gravidez" element={<PregnancyPhases />} />

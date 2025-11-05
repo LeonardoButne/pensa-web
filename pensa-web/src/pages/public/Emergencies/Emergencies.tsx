@@ -148,7 +148,7 @@ export function Emergencies() {
                   padding="lg"
                   radius="md"
                   component={Link}
-                  to={`/urgencias/${emergency.id}`}
+                  to={`/primeiros-socoros/${emergency.id}`}
                   style={{ textDecoration: "none" }}
                 >
                   <Card.Section>

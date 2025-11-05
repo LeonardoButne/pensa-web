@@ -48,7 +48,7 @@ export function ComplaintSection() {
         <Text ta="center" mb={rem(40)} c="white">
           Ajude-nos a deixar o sistema de saúde melhor para todos, enviando as
           suas queixas ou reclamações, através de *660# depois selecionando a
-          opção 6 - Queixas ou pelo WhatsApp através do número +258 84 300 0660.
+          opção 6 - Queixas ou pelo WhatsApp através do número +258 82 00 00 660.
         </Text>
 
         <Grid gutter="xl">

@@ -48,11 +48,11 @@ interface DiseaseDetailData {
 const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
   {
     id: 1,
-    name: "Aftas",
+    name: "Aftas", 
     description:
       "É uma pequena úlcera não muito profunda que pode ser bem dolorosas e incomodar o paciente na hora de ingerir alimentos, surge em diversos pontos da boca.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/aftas.jpg",
     symptoms:
       "Dor intensa no local, que pode causar dificuldade para comer, falar, engolir, febre, sensação de mal-estar e em alguns casos, aumento das glândulas do pescoço.",
     treatment:
@@ -68,7 +68,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "O alcoolismo é uma condição caracterizada pelo uso compulsivo de bebidas alcoólicas, a pesar das consequências negativas para saúde, vida social, familiar e profissional da pessoa.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Alcoolismo.jpg",
     symptoms:
       "Forte vontade de consumir álcool, dificuldade em limitar a quantidade de álcool consumida, ansiedade, náuseas, tremores, irritabilidade quando a pessoa fica sem beber.",
     treatment:
@@ -85,7 +85,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Acidente Vascular Cerebral (AVC ou Derrame) ocorre quando há entupimento ou rompimento dos vasos que levam sangue ao cérebro provocando a paralisia da área.",
     category: "CARDIOVASCULAR",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/avc.webp",
     symptoms:
       "Dor de cabeça, perda da força de 1 lado do corpo, alterações da visão, boca torta e sobrancelha caída, dificuldade de falar, perda de memória.",
     treatment:
@@ -101,7 +101,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "O cancro da mama é o aparecimento de 1 caroço na mama. É mais frequente na mulher, mas pode atingir também o homen.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/cancro-mama.jpg",
     symptoms:
       "Nódulo ou inchaço na mama ou axila, mudança no tamanho ou forma da mama, secreção no mamilo (exceto leite), mudança na cor ou textura da pele da mama.",
     treatment:
@@ -118,7 +118,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "O cancro da próstata é o crescimento desorganizado, descontrolado e desnecessário da próstata (um órgão que se localiza logo abaixo da bexiga masculina).",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/cancro-da-prostata.jpg",
     symptoms:
       "Na fase inicial, pode não apresentar sintomas. Em fases avançadas: dificuldade para urinar, jato urinário fraco, necessidade de urinar frequentemente (principalmente à noite), sangue na urina ou sêmen.",
     treatment:
@@ -135,7 +135,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "O cancro do colo do útero é um doença silenciosa (não doi) que se desenvolve no colo do útero (a parte mais funda da vagina).",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/cancro-do-colo-do-utero.png",
     symptoms:
       "Sangramento vaginal anormal (após a relação sexual, entre períodos ou após a menopausa), dor pélvica e corrimento vaginal com odor fétido.",
     treatment:
@@ -152,7 +152,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "É um conjunto de tumores malignos que afectam qualquer localização da cavidade oral, dos lábios à garganta, (incluindo as amígdalas e a faringe).",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/cancro-oral.jpg",
     symptoms:
       "Feridas na boca ou lábios que não cicatrizam em 15 dias, manchas brancas ou vermelhas na boca, sangramento sem causa aparente e dificuldade para mastigar ou engolir.",
     treatment:
@@ -169,7 +169,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Doença pós-eruptiva, caracterizada por amolecimento da superfície do dente, levando à formação de uma cavidade.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/carie-dentaria.jpg",
     symptoms:
       "Dor de dente, sensibilidade ao comer doces ou beber líquidos frios/quentes, e buracos visíveis nos dentes.",
     treatment:
@@ -186,7 +186,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Cólera é uma doença infecto-contagiosa do intestino delgado transmitida por meio de alimento ou água contaminados.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/colera.jpeg",
     symptoms:
       "Diarreia aquosa e abundante (água de arroz), vômitos e desidratação severa.",
     treatment:
@@ -203,7 +203,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Os condilomas aparecem como verrugas, que ocorrem de forma única ou múltipla, localizadas principalmente na região genital.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/condiloma-acuminado.jpg",
     symptoms:
       "Verrugas na região genital ou anal, que podem ser planas, elevadas ou em forma de couve-flor. Podem causar coceira ou ardência.",
     treatment:
@@ -218,7 +218,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "É uma doença que se caracteriza pela inflamação da conjuntiva, ou seja, inflamação da membrana de globo ocular.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/conjuntivite.jpg",
     symptoms:
       "Olhos vermelhos, coceira, lacrimejamento, secreção (ramela), inchaço das pálpebras e sensibilidade à luz.",
     treatment:
@@ -235,7 +235,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "O coronavírus é um vírus que causa doenças respiratórias que são na maioria gripes comuns. Em algumas pessoas pode causar doenças mais graves como a pneumonia.",
     category: "RESPIRATORY",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/corona-virus.jpg",
     symptoms:
       "Febre, tosse seca, cansaço, dificuldade para respirar (em casos graves), dores musculares, perda de olfato ou paladar.",
     treatment:
@@ -252,7 +252,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Corrimento vaginal é uma secreção natural que sai da vagina. Mudanças na cor, cheiro ou quantidade podem indicar um problema.",
     category: "MATERNAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/corimento-vaginal.webp",
     symptoms:
       "Aumento da secreção com cor, cheiro ou textura anormal (verde, amarelada, fétida). Pode vir acompanhada de coceira, ardência ou dor ao urinar.",
     treatment:
@@ -269,7 +269,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "É quando a pessoa não consegue parar de usar drogas proibidas, como cocaína ou heroína. Continua a usar por se sentir presa ao vício, mesmo com problemas sérios.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Dependencia-de-Drogas-Ilicitas.jpg",
     symptoms:
       "Uso compulsivo da substância, necessidade de doses cada vez maiores, ansiedade/irritação na ausência da droga, negligência de responsabilidades e isolamento social.",
     treatment:
@@ -286,7 +286,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "A depressão é uma doença que afeta o modo como a pessoa se sente, pensa e vive o dia a dia. Vai além da tristeza comum.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Depressão.jpg",
     symptoms:
       "Tristeza profunda e persistente, perda de interesse em atividades prazerosas, alterações no sono/apetite, cansaço excessivo, dificuldade de concentração e pensamentos de morte ou suicídio.",
     treatment:
@@ -303,7 +303,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Diabetes é 1 doença com aumento anormal de açúcar (glicose) no sangue que surge devido à 1 deficiência na produção/ação da insulina (produzida no pâncreas).",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/diabetes.jpg",
     symptoms:
       "Muita sede ou fome, cansaço fácil, visão turva, demora na cicatrização de feridas, urina muitas vezes, ganho ou perda de peso em excesso.",
     treatment:
@@ -319,7 +319,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Diz-se que se esta com diarreia, quando uma pessoa vai 3 ou mais vezes a casa de banho e evacua fezes amolecidas ou mais líquidas que o normal.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/diarreia.avif",
     symptoms:
       "Desidratação, dores de barriga, lábios secos e rachados, olhos para dentro, fraqueza, pregas na barriga, e pulso fraco.",
     treatment:
@@ -336,7 +336,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Doenças cardiovasculares ou cardíacas são uma classe de doenças que afectam o coração ou os vasos sanguíneos.",
     category: "CARDIOVASCULAR",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Doenca-cardiaca.png",
     symptoms:
       "Falta de ar, sentir-se fraco/com peso no peito, palpitações cardíacas, inchaço nos tornozelos/pés/barriga, dores de cabeça, vertigens.",
     treatment:
@@ -353,7 +353,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Doença neurológica caracterizada por convulsões recorrentes causadas por descargas eléctricas anormais no cérebro. A epilepsia não é contagiosa e tem tratamento.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/epilepsia.webp",
     symptoms:
       "Fase inicial: visão turva, tonturas e náuseas. Durante a crise: perda de consciência, tremores involuntários (convulsões) e espumar pela boca. Pós-crise: Confusão mental, sonolência e dores de cabeça.",
     treatment:
@@ -370,7 +370,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "São anomalias congénitas consistem em fendas nas estruturas anatómicas como os lábios, o palato, alvéolo dentário, comissura labial, pálpebras, cantos dos olhos.",
     category: "CHILD_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/FENDA-LABIAL.jpg",
     symptoms:
       "Fenda visível nos lábios e/ou no palato (céu da boca) à nascença.",
     treatment:
@@ -385,7 +385,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     name: "Gengivite",
     description: "É uma inflamação da gengiva.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/gengivite.jpg",
     symptoms:
       "Gengivas inchadas, vermelhas e sangramento ao toque ou ao escovar os dentes.",
     treatment:
@@ -401,7 +401,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "A gonorreia é uma infecção causada por uma bactéria e é transmitida atraves de contacto sexual desprotegido (vaginal, oral ou anal) com uma pessoa infectada. ",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/gonorreia.jpg",
     symptoms:
       "Nos homens: dor ao urinar e saída de um líquido amarelo-esverdeado de pus pelo pénis. Nas mulheres: corrimento vaginal, dor e ardência ao urinar e dor na parte baixa da barriga.",
     treatment:
@@ -418,7 +418,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "A Halitose (Mau Hálito) é a alteração no hálito, produzindo um mau cheiro. Pode ser causada por má higiene ou outros problemas de saúde.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/halitose.jpg",
     symptoms:
       "O principal sintoma é a alteração no hálito, produzindo um mau cheiro.",
     treatment:
@@ -434,7 +434,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Hepatite B é uma infecção do fígado causada pelo vírus da hepatite B (VHB). O VHB é transmitido por contacto com fluidos corporais infectados.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/hepatite-b.webp",
     symptoms:
       "Diversas pessoas não apresentam sintomas. Mas podem ter: febre, náuseas, dor abdominal, urina escura, fezes claras e pele ou olhos amarelados (icterícia).",
     treatment:
@@ -451,7 +451,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "A úlcera genital (Herpes genital) ou anorrectal é caracterizada por presença de borbulhas ou feridas na área genital.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/herpes-genital.webp",
     symptoms:
       "Presença de vesículas agrupadas em 'cacho' com sintomas como sensibilidade aumentada, ardência, comichão (coceira).",
     treatment:
@@ -468,7 +468,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Hipertensão ou Tensão alta é uma doença que ocorre quando a pressão que o sangue faz na parede das artérias para se movimentar é muito forte.",
     category: "CARDIOVASCULAR",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/hipertensao-arterial.jpg",
     symptoms:
       "Geralmente não apresenta sintomas, mas há doentes que sentem dores de cabeça, tonturas, fraqueza, visão turva. Pode levar ao AVC e morte.",
     treatment:
@@ -485,7 +485,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "SIDA é provocada pelo Vírus da Imunodeficiência Humana (HIV) que entra no organismo por contacto com uma pessoa infectada e destroi as nossas células de defesa.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/hiv.jpg",
     symptoms:
       "Febre, tosse, suores noturnos, inchaço dos gânglios linfáticos, dores de cabeça/músculos/articulações, emagrecimento, falta de apetite.",
     treatment:
@@ -502,7 +502,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Malária é uma doença infecciosa causada pela picada de mosquito anofeles infectado que injecta o parasita quando pica a pessoa para se alimentar do sangue dela.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/malaria.jpg",
     symptoms:
       "Febre, suor, tremores e calafrios, dores de cabeça e musculares, cansaço, náusea, vómito, diarreia. Pode levar à morte quando não tratada.",
     treatment:
@@ -519,7 +519,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "É uma febre hemorrágica rara, mas grave, que afecta humanos e é causada pelo vírus Marburg.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/marburg.jpg",
     symptoms:
       "Febre, calafrios, cefaleia e dor muscular. Pode evoluir para náusea, vômito, diarreia, icterícia, insuficiência hepática e hemorragia maciça.",
     treatment:
@@ -536,7 +536,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "O noma (o termo vem do grego e significa 'devorar') é uma doença necrosante destrutiva da boca e do rosto.",
     category: "CHILD_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/noma.avif",
     symptoms:
       "Mau hálito ou halitose, ulceração dolorosa das gengivas, sangramento espontâneo, salivação excessiva, desfiguração, perda de dentes.",
     treatment:
@@ -552,7 +552,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     name: "Periodontite",
     description: "É destruição do osso e dos tecidos que suportam o dente.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Periodontite.jpg",
     symptoms:
       "Mau hálito, gengiva vermelha e inchada, dentes tortos, aumento da sensibilidade dentária, mobilidade dentária, perda dos dentes, aumento do espaço entre dentes.",
     treatment:
@@ -569,7 +569,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "A Pólio é uma doença altamente contagiosa, que causa paralisia infantil e não tem cura. Em casos graves pode levar à morte.",
     category: "CHILD_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Polio.webp",
     symptoms:
       "A criança com pólio apresenta febres altas e perda da força muscular. Um ou mais membros (braço ou perna) podem ficar paralisados.",
     treatment:
@@ -586,7 +586,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "A raiva é uma doença causada por um vírus que afeta animais mamíferos, incluindo o Homem.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Raiva.webp",
     symptoms:
       "Dor no local da mordedura, perda de sensibilidade local, mal-estar geral, dor de cabeça, febre, ansiedade, dor de garganta, salivação excessiva, convulsões.",
     treatment:
@@ -603,7 +603,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "A sífilis é uma infecção causada pela bactéria Treponema pallidum, transmitida por via sexual ou vertical (de mãe para o filho).",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Sifilis.webp",
     symptoms:
       "Primeiro: ferida no local de entrada da bactéria (pénis, vagina, ânus, boca). Secundária: Manchas no corpo, palmas das mãos e plantas dos pés. Terciária: Afecta o coração, cérebro, nervos e ossos.",
     treatment:
@@ -619,7 +619,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Suicídio é quando alguém tira a própria vida, movido por uma dor profunda que parece não ter fim. Muitas vezes, a pessoa já tentou antes ou deu sinais de que estava a sofrer.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/suicidio.jpg",
     symptoms:
       "A pessoa pode começar a se isolar, perder interesse em tudo, ou até começar a se desfazer de coisas importantes. Falar direta ou indiretamente sobre a morte são pedidos de ajuda.",
     treatment:
@@ -636,7 +636,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "O tabagismo é uma dependência da nicotina, substância presente no tabaco que leva ao uso contínuo de cigarros e outros produtos derivados.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Tabagismo.jpg",
     symptoms:
       "Desejo intenso por fumar, ansiedade ou irritação quando não consegue fumar. A longo prazo, tosse crônica, dificuldades respiratórias e cancro.",
     treatment:
@@ -653,7 +653,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "É calcificação da placa bacteriana ao longo do tempo pelo efeito da saliva só por si não é doença, mas sua presença na superfície dentária origina outras doenças.",
     category: "CHRONIC_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Tartaro.webp",
     symptoms:
       "Endurecimento da placa bacteriana, inchaço e vermelhidão na gengiva, retração gengival e mau hálito.",
     treatment:
@@ -670,7 +670,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "Tuberculose é uma doença causada por uma bactéria que afecta principalmente os pulmões, mas pode afectar qualquer órgão do corpo como ossos, rins, e o cérebro.",
     category: "RESPIRATORY",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/Tuberculose.webp",
     symptoms:
       "Os principais sintomas da tuberculose são a tosse persistente, a febre, a perda de peso e falta de apetite. Podendo causar também dor no peito e suores nocturnos.",
     treatment:
@@ -687,7 +687,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "A Varíola dos Macacos (Mpox) é uma doença causada pelo vírus que infecta macacos. Pode ser transmitida através do contacto com animais infectados ou com uma pessoa infectada.",
     category: "INFECTIOUS_DISEASES",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/variola-dos-macacos.jpg",
     symptoms:
       "Erupções cutâneas iguais a borbulhas em partes do corpo, ter febres, Inchaço nos gânglios, dores musculares, dores de cabeça, fraqueza.",
     treatment:
@@ -704,7 +704,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "É uma perturbação em que a pessoa sente desejo incontrolável de jogar, mesmo sabendo dos prejuízos. O jogo passa a ser o centro da vida.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/jogos-de-azar.png",
     symptoms:
       "Perda de controlo, apostas frequentes e progressivas, esconder o problema da família, endividamento e sofrimento emocional.",
     treatment:
@@ -721,7 +721,7 @@ const MOCK_DISEASES_DETAILS: DiseaseDetailData[] = [
     description:
       "É quando a pessoa sente necessidade constante de estar conectada, mesmo sem motivo claro e não conseguem controlar o tempo que passa online.",
     category: "MENTAL_HEALTH",
-    imageUrl: "/images/disease-placeholder.jpg",
+    imageUrl: "/images-diseases/vicio-redes-sociais.png",
     symptoms:
       "Ansiedade ou tristeza quando está longe do celular ou da internet. Verificação compulsiva de notificações, isolamento e negligência de tarefas.",
     treatment:

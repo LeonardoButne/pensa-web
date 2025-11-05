@@ -8,7 +8,7 @@ import {
   Image,
   SimpleGrid, // 🟢 Importado para a seção de parceiros
 } from "@mantine/core";
-import { IconBrandWhatsapp, IconMail } from "@tabler/icons-react";
+import { IconBrandWhatsapp, IconPhone } from "@tabler/icons-react";
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
 import { useMantineTheme } from "@mantine/core";
@@ -56,7 +56,8 @@ export function Hero() {
   );
 
   const handleUSSDCall = () => {
-    window.location.href = "tel:*660#";
+    // Codifica o "#" para evitar bloqueios
+    window.location.href = "tel:*660%23";
   };
 
   const handleWhatsApp = () => {
@@ -97,7 +98,7 @@ export function Hero() {
                 radius="md"
                 color="black"
                 onClick={handleUSSDCall}
-                leftSection={<IconMail size={20} />}
+                leftSection={<IconPhone size={20} />}
               >
                 Ligue *660# (USSD)
               </Button>
