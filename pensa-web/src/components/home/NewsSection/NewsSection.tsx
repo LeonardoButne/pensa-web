@@ -7,8 +7,10 @@ import {
   Text,
   Badge,
   Box,
+  Button,
+  Group,
 } from "@mantine/core";
-import { IconCalendar } from "@tabler/icons-react";
+import { IconCalendar, IconMail } from "@tabler/icons-react";
 import classes from "./NewsSection.module.css";
 
 const news = [
@@ -79,7 +81,6 @@ export function NewsSection() {
               <Card.Section>
                 <Image
                   src={item.image}
-                  // height={350}
                   fit="contain"
                   alt={item.title}
                   fallbackSrc="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%2300C7B7'/%3E%3C/svg%3E"
@@ -110,8 +111,23 @@ export function NewsSection() {
             </Card>
           ))}
         </SimpleGrid>
+
+        {/* Botão de Newsletter */}
+        <Group justify="center" mt={60}>
+          <Button
+            component="a"
+            href="https://pensa.us5.list-manage.com/subscribe?u=6728b29e62cbca57aac43a7a4&id=6737f56e4d"
+            target="_blank"
+            rel="noopener noreferrer"
+            size="md"
+            color="cyan"
+            radius="xl"
+            leftSection={<IconMail size={18} />}
+          >
+            Subscreve a nossa Newsletter
+          </Button>
+        </Group>
       </Container>
     </Box>
   );
 }
-
