@@ -124,7 +124,7 @@ export function NewsSection() {
             radius="xl"
             leftSection={<IconMail size={18} />}
           >
-            Subscreve a nossa Newsletter
+            Receba notícias por email
           </Button>
         </Group>
       </Container>
