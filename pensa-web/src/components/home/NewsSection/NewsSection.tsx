@@ -115,7 +115,7 @@ function NewsCard({ item, index }: NewsCardProps) {
       }}
     >
       <Card.Section style={{ position: "relative", overflow: "hidden" }}>
-        <Box style={{ position: "relative", paddingTop: "60%", overflow: "hidden" }}>
+        <Box style={{ position: "relative", paddingTop: "100%", overflow: "hidden" }}>
           <Image
             src={item.image}
             alt={item.title}
